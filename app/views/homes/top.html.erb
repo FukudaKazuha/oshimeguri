@@ -1,7 +1,31 @@
-<h1>推し巡り</h1>
-新規登録、サインイン
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+   <link rel="stylesheet" href="../../assets/stylesheets/top.css"/>
+ </head>
+  
+ <body>
+  <h1>推し巡り</h1>
+  
+ <!--バリデーション-->
+    <!--<%# if @user.errors.any? %>-->
+    <!--  <%#= @user.errors.count %>件のエラー-->
+    <!--  <ul>-->
+    <!--    <%# @user.errors.full_messages.each do |message| %>-->
+    <!--      <li><%#= message %></li>-->
+    <!--    <%# end %>-->
+    <!--  </ul>-->
+    <!--<%# end %>-->
+    
+<!--ログイン-->
+   <%= link_to "Log in ", new_user_session_path %>
+   </br>
+ <!--新規登録-->
+   <%= link_to "Sign up", new_user_registration_path %>
+   </br>
 
-アプリケーションの説明（レイアウト的にゴチャついてたらaboutページに）
+  <h2>推し巡り</h2>
+   説明
 
-ヘッダーへの記述
-新規登録、サインイン、aboutページ
+ </body>
+</html>

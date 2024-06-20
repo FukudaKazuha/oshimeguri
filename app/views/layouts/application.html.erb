@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Oshimeguri</title>
+    <title>推し巡り</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -19,12 +19,9 @@
       <!--ここまで、ログインしている時-->
       <!--ここから、ログインしていない時-->
      <% else %>
-      <li>
         <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li>
+      
         <%= link_to "ログイン", new_user_session_path %>
-      </li>
      <% end %>
     </header>
     <%= yield %>
