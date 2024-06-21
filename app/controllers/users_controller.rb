@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   # before_action :set_user, only: [:show]
+  before_action :authenticate_user!, only: [:mypage]
   # new必要？
   def new
     @user=User.new
@@ -14,6 +15,10 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+  end
+  
+  def mypage
+    redirect_to user_path(current_user)
   end
   
   def update
