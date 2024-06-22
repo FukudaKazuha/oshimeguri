@@ -8,21 +8,19 @@
   <h1>推し巡り</h1>
   
  <!--バリデーション-->
-    <% if @user.errors.any? %>
-      <%= @user.errors.count %>件のエラー
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    <!--<% end %>-->
-    
-<!--ログイン-->
+    <%# if @user.errors.any? %>
+      <%#= @user.errors.count %>
+    <!--  <ul>-->
+        <%# @user.errors.full_messages.each do |message| %>
+          <%#= message %>
+        <%# end %>
+    <!--  </ul>-->
+    <!--<%# end %>-->
+   <br>
    <%= link_to "Log in ", new_user_session_path %>
    </br>
- <!--新規登録-->
    <%= link_to "Sign up", new_user_registration_path %>
-   </br>
+   
 
   <h2>推し巡り</h2>
    説明
