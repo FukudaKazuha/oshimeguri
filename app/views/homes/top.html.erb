@@ -8,14 +8,14 @@
   <h1>推し巡り</h1>
   
  <!--バリデーション-->
-    <!--<%# if @user.errors.any? %>-->
-    <!--  <%#= @user.errors.count %>件のエラー-->
-    <!--  <ul>-->
-    <!--    <%# @user.errors.full_messages.each do |message| %>-->
-    <!--      <li><%#= message %></li>-->
-    <!--    <%# end %>-->
-    <!--  </ul>-->
-    <!--<%# end %>-->
+    <% if @user.errors.any? %>
+      <%= @user.errors.count %>件のエラー
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <!--<% end %>-->
     
 <!--ログイン-->
    <%= link_to "Log in ", new_user_session_path %>
