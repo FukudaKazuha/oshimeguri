@@ -35,10 +35,10 @@ class UsersController < ApplicationController
   def destroy
   end
   
-  # mypageはnamespace使う
+  
   
    private
-
+# 下のこれは必要ない？
   # def user_params
   #   params.require(:user).permit(:email, :password)
   # end

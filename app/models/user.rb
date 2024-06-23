@@ -4,8 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-  # バリデーション
-  # validates :email, presence: true
-  # validates :password, presence: true
+  # バリデーション、emailとPW以外であればここに書くこと
          
 end
