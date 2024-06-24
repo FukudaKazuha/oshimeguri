@@ -7,10 +7,10 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+        # 追加
+        username: "ユーザーネーム"
     models:
       user: "ユーザ"
-      # 追加
-      username: "ユーザーネーム"
   devise:
     confirmations:
       new:
