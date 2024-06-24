@@ -5,17 +5,17 @@ class UsersController < ApplicationController
   # def new
   #   @user=User.new
   # end
-  # # create必要？
-  # def create
-  #   @user = User.new(user_params[:id])
+  # create必要？
+  def create
+    # @user = User.new(user_params[:id])
     
-  #   if @user.save
-  #     redirect_to user_path(current_user)
-  #   else
-  #     @users = User.all 
-  #     render :new
-  #   end
-  # end
+    if @user.save
+      redirect_to user_path(current_user)
+    else
+      # @users = User.all 
+      render :new
+    end
+  end
   
   def edit
   end
