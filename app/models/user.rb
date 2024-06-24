@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   # バリデーション、emailとPW以外であればここに書くこと
+  validates :username, presence: true
          
 end
