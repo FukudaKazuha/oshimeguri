@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   # before_action :set_user, only: [:show]
   before_action :authenticate_user!, only: [:mypage]
-  # new必要？
+  # # new必要？
   def new
     @user=User.new
   end
-  # create必要？
+  # # create必要？
   def create
     @user = User.new(user_params[:id])
     
@@ -17,16 +17,18 @@ class UsersController < ApplicationController
     end
   end
   
-  def edit
-  end
   
   def show
     @user = User.find(params[:id])
+    # @user = current_user
   end
   
   def mypage
     @user = current_user
     redirect_to user_path(current_user)
+  end
+  
+  def edit
   end
   
   def update

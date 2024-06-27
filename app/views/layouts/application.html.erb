@@ -12,6 +12,11 @@
 
   <body>
     <header>
+       <!--<%#= link_to "マイページ", mypage_path %>-->
+       
+       <!--<%#= link_to "ユーザー詳細", user_path(@user) %>-->
+       
+      
      <% if user_signed_in? && @user == current_user %>
     
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
