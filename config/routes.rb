@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: "homes#top"
   get 'users/mypage' => 'users#mypage'
   resources :users, only: [:show,:edit,:update,:destroy]
- 
+  
 end
