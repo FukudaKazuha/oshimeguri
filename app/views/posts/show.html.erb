@@ -1,0 +1,15 @@
+ 
+ <h1>投稿詳細</h1>
+
+<h2>施設や道の場所名</h2>
+<p><%= @post.title %></p>
+
+<h2>文章</h2>
+<p><%= @post.body %></p>
+
+<h2>画像</h2>
+<%= image_tag @post.image, size: "300x300" %>
+
+<p>
+<%= link_to "編集", edit_post_path(@post.id) %>
+</p>
