@@ -13,13 +13,13 @@ class ApplicationController < ActionController::Base
    protected
 
   def configure_permitted_parameters
-     if resource_class == User
-    # サインアップ、マールとパスワード追加
-       devise_parameter_sanitizer.permit(:sign_up, keys: [:username,:email,:password])
+    if resource_class == User
+    # サインアップ、メールとパスワード追加
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:username,:email,:password])
     # サインイン、
-       devise_parameter_sanitizer.permit(:sign_in,keys:[:username,:password])
+      devise_parameter_sanitizer.permit(:sign_in,keys:[:username,:password])
       # devise_parameter_sanitizer.permit(:account_update,keys:[:name,:email])
-     end
+    end
   end
   
 
