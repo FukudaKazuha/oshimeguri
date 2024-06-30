@@ -4,7 +4,25 @@
   
   <%= link_to "プロフィール編集", edit_user_path(@user.id) %>
   
-  <p>自分の投稿一覧</p>
+  <h2>自分の投稿一覧</h2>
+   <% @posts.each do |post| %>
+   
+　<!--<div>-->
+ <!-- <%#= link_to post_path(post.id) do %>-->
+ <!--   <%#= attachment_image_tag post_path :image %>-->
+ <!-- <%# end %>-->
+  
+   
+   <h2>画像</h2>
+　　<%= image_tag post.image, size: "300x300" %>
+    
+   <h2>施設や道の場所名</h2>
+   <span><%= post.title %></span>
+   
+   <h2>文章</h2>
+   <span><%= post.body %></span>
+  
+<% end %>
   
   
 <% else %>

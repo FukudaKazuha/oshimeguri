@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @posts=Post.all
     # @user = current_user
   end
   
@@ -42,7 +43,7 @@ class UsersController < ApplicationController
    private
 # 下のこれは必要ない？
   def user_params
-    params.require(:user).permit(:email, :password, :username)
+    params.require(:user).permit(:email, :password, :username,:image)
   end
 
   def set_user
