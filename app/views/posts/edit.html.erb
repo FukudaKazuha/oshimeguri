@@ -1,13 +1,13 @@
 <h1>編集ページ</h1>
  <!--投稿の更新失敗バリデーション-->
-    <% if @post.errors.any? %>
-      <%= @post.errors.count %>errors
-      <ul>
-        <% @post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    <% end %>
+    <!--<%# if @post.errors.any? %>-->
+    <!--  <%#= @post.errors.count %>件のエラー-->
+    <!--  <ul>-->
+    <!--    <%# @post.errors.full_messages.each do |message| %>-->
+    <!--      <li><%#= message %></li>-->
+    <!--    <%# end %>-->
+    <!--  </ul>-->
+    <%# end %>
     
      <!--更新投稿フォーム-->
      <%#= form_with model: @post, url: post_path(@post.id), method: :patch do |f| %>

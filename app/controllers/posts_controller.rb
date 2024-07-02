@@ -9,7 +9,6 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post.id)
     else
-      
       render :new
     end
   end
@@ -28,10 +27,10 @@ class PostsController < ApplicationController
   end
   
   def update
-    post = Post.find(params[:id])
-   if post.update(post_params)
+    @post = Post.find(params[:id])
+   if @post.update(post_params)
       flash[:notice] = "更新に成功しました"
-    redirect_to post_path(post.id)
+    redirect_to post_path(@post.id)
    else
      render :edit
    end
