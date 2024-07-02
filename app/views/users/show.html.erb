@@ -7,10 +7,11 @@
   <h2>自分の投稿一覧</h2>
    <% @posts.each do |post| %>
    
-　<!--<div>-->
- <!-- <%#= link_to post_path(post.id) do %>-->
- <!--   <%#= attachment_image_tag post_path :image %>-->
- <!-- <%# end %>-->
+  <div>
+  <%= link_to post_path(post.id) do %>
+    <%#= image_tag post_path :image %>
+    <%= image_tag post_path :image, size: "300x300"%>
+  <% end %>
   
    
    <h2>画像</h2>
