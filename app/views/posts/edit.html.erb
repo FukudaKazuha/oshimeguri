@@ -10,10 +10,15 @@
     <% end %>
     
      <!--更新投稿フォーム-->
-     <%= form_with model: @post, url: post_path(@post.id), method: :patch do |f| %>
+     <%#= form_with model: @post, url: post_path(@post.id), method: :patch do |f| %>
+     <%= form_with model: @post do |f| %>
+     <p>
+      <h4>投稿画像</h4>
+  　　<%= f.file_field :image, accept: "image/*" %>
+     </p>
      <p>
       <label for="inputTitle">施設や道の場所名</label>
-      <%= f.text_field :title, autofocus: true, id:"inputTitle", placeholder:"お店の名前や通り名など"%>
+      <%= f.text_field :title, autofocus: true, id:"inputTitle", placeholder:"お店の名前など"%>
      </p> 
      
      <p>

@@ -10,7 +10,7 @@
 <% end %>
 
  <%= form_with model: @post do |f| %>
-　<h4>画像</h4>
+　<h4>投稿画像</h4>
   <%= f.file_field :image, accept: "image/*" %>
   
   <h4>施設や道の場所名</h4>
@@ -23,4 +23,3 @@
   <%= f.submit '投稿' %>
   </p>
  <% end %>
-<%# end %>
