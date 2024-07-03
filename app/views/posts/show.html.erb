@@ -9,9 +9,16 @@
 <h2>施設や道の場所名</h2>
 <p><%= @post.title %></p>
 
-<h2>文章</h2>
+<h2>投稿文</h2>
 <p><%= @post.body %></p>
 
 <p>
-<%= link_to "編集", edit_post_path(@post.id) %>
+<%# if @post.user == current_user %>
+ <%= link_to "投稿編集", edit_post_path(@post.id) %>
+<%# end %>
+</p>
+<p>
+<%# if @post.user == current_user %>
+ <%= link_to "投稿削除",users_mypage_path(@post), method: :delete, "data-confirm"=>"本当に消しますか？" %>
+<%# end %>
 </p>

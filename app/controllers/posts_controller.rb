@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    redirect_to 
+    redirect_to users_mypage_path(@post)
   end
   
     # 投稿データのストロングパラメータ
