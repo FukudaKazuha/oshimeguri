@@ -36,15 +36,17 @@
    　　<!--<tr>-->
      <!--  <td>-->
         <!--<div>-->
-         <%= link_to post_path(post.id) do %>
-          <%= image_tag post_path :image %>
+
+         
           <%#= attachment_image_tag post_path :image %>
-         <% end %>
+         
         <!--</td>-->
   
         <!--<td>-->
    　  <h2>投稿画像</h2>
+   　    <%= link_to post_path(post.id) do %>
 　　　  <%= image_tag post.image, size: "300x300" %>
+　　　  <% end %>
 　　 　 <!--</td>-->
      <!--   <td>-->
       　<h2>施設や道の場所名</h2>

@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    attributes:
+      post:
+        image: 画像
+        body: 投稿文
+        title: タイトル
+    errors:
+      models:
+        post:
+          attributes:
+            image:
+              blank: を選択してください

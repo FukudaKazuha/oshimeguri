@@ -59,3 +59,4 @@ gem 'devise'
 # 日本語
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'rails-i18n'
