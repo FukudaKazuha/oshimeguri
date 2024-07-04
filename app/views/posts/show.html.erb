@@ -3,13 +3,13 @@
  
  <%= flash[:notice] %>
  
- <h2>画像</h2>
+ <!--投稿画像-->
 <%= image_tag @post.image, size: "300x300" %>
 
-<h2>施設や道の場所名</h2>
+<h4>施設や道の場所名</h4>
 <p><%= @post.title %></p>
 
-<h2>投稿文</h2>
+<h4>投稿文</h4>
 <p><%= @post.body %></p>
 
 <p>
@@ -19,6 +19,6 @@
 </p>
 <p>
 <%# if @post.user == current_user %>
- <%= link_to "投稿削除",users_mypage_path(@post), method: :delete, "data-confirm"=>"本当に消しますか？" %>
+ <%= link_to "投稿削除",post_path(@post.id), method: :delete, "data-confirm"=>"本当に消しますか？" %>
 <%# end %>
 </p>

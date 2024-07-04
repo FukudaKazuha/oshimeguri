@@ -1,76 +1,32 @@
 <% if user_signed_in? && @user == current_user %>
-<!--<body>-->
-<!-- <main>-->
-<!--  <div class="container">-->
-<!--   <div class="row">-->
-   
-<!--    <div class="col-md-3">-->
-     <h1>マイページ</h1>
-     <h2>ユーザー名：<%= @user.username %></h2>
-  
-     <%= link_to "プロフィール編集", edit_user_path(@user.id) %>
-    <!--</div>-->
-    
-    <!--左ページと右ページの隙間-->
-   <!-- <div class="offset-md-1"></div>-->
-    
-    <!--画面右側ページ-->
-    <!--<h2>自分の投稿一覧</h2>-->
-  　<!--<div class="col-md-8">-->
-  　     <h2>自分の投稿一覧</h2>
-  　  <!--<table class="table">-->
-     <!-- <thead>-->
-    　<!--　 <tr>-->
-     <!--    <th>投稿画像</th>-->
-     <!--    <th>-->
-     <!--     施設や道の場所名-->
-     <!--    </th>-->
-     <!--    <th>-->
-     <!--     投稿文-->
-     <!--    </th>-->
-     <!--   </tr>-->
-     <!--  </thead>-->
-     <!--  <tbody>-->
-  　　<!--<h2>自分の投稿一覧</h2>-->
-   　　<% @posts.each do |post| %>
-   　　<!--<tr>-->
-     <!--  <td>-->
-        <!--<div>-->
 
-         
-         
-         
-        <!--</td>-->
+<h1>マイページ</h1>
+<h2>ユーザー名：<%= @user.username %></h2>
   
-        <!--<td>-->
-   　  <h2>投稿画像</h2>
-   　    <%= link_to post_path(post.id) do %>
-　　　  <%= image_tag post.image, size: "300x300" %>
-　　　  <% end %>
-　　 　 <!--</td>-->
-     <!--   <td>-->
-      　<h2>施設や道の場所名</h2>
-   　    <span><%= post.title %></span>
-        <!--</td>-->
-        <!-- <td>-->
-   　     <h2>投稿文</h2>
-     　  <span><%= post.body %></span>
-       　<!--</td>-->
-   　    <!--</tr>-->
-　   　<% end %>
-<!--　    </tbody>-->
-<!--　   </table>-->
-<!--　  </div>-->
-<!--   </div>-->
-<!--  </div>-->
-<!-- </main>-->
-<!--</body>-->
+ <%= link_to "プロフィール編集", edit_user_path(@user.id) %>
+    
+ <h2>自分の投稿一覧</h2>
+  <% @posts.each do |post| %>
+  
+   <%= link_to post_path(post.id) do %>
+　  <%= image_tag post.image, size: "300x300" %>
+　 <% end %>
+　　 　
+     <!-- 　<h2>施設や道の場所名</h2>-->
+   　 <!--   <span><#%= post.title %></span>-->
+      
+   　 <!--    <h2>投稿文</h2>-->
+     <!--　  <span><%#= post.body %></span>-->
+      
+ 　<% end %>
+
   
   
-<% else %>
-  <h1>ユーザー詳細ページ</h1>
-  <h2>ユーザー名：<%= @user.username %></h2>
+   <% else %>
+    <h1>ユーザー詳細ページ</h1>
+    <h2>ユーザー名：<%= @user.username %></h2>
   
-  <p>ユーザーの投稿一覧</p>
-<% end %>
+    <p>ユーザーの投稿一覧</p>
+  
+  <% end %>
 
