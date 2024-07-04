@@ -4,7 +4,7 @@ ja:
       post:
         image: 画像
         body: 投稿文
-        title: タイトル
+        title: 施設や道の場所名
     errors:
       models:
         post:
