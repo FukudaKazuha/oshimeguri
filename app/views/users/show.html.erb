@@ -1,9 +1,11 @@
 <% if user_signed_in? && @user == current_user %>
 
 <h1>マイページ</h1>
-<h2>ユーザー名：<%= @user.username %></h2>
-  
- <%= link_to "プロフィール編集", edit_user_path(@user.id) %>
+<!--プロフィール写真-->
+<%= @user.profile_image %> <h2>ユーザー名：<%= @user.username %></h2>
+<h3>自己紹介：<%= @user.introduction %></h3>
+ <p><%= link_to "プロフィール編集", edit_user_path(@user.id) %></p>
+
     
  <h2>自分の投稿一覧</h2>
   <% @posts.each do |post| %>
