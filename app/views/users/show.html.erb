@@ -3,7 +3,9 @@
 <h1>マイページ</h1>
 <p><%= flash[:notice] %></p>
 <!--プロフィール写真-->
-<%= @user.profile_image %> <h2>ユーザー名：<%= @user.username %></h2>
+<%= @user.profile_image %> 
+<%#= image_tag @users.profile_image, class: 'post-image' if @users.profile_image.attached? %>
+<h2>ユーザー名：<%= @user.username %></h2>
 <!--自己紹介、入力すれば出てくる-->
 <h4><%= @user.introduction %></h4>
  <p><%= link_to "プロフィール編集", edit_user_path(@user.id) %></p>
