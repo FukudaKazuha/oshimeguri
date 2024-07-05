@@ -20,6 +20,7 @@ class PostsController < ApplicationController
   def show
      @post = Post.find(params[:id])
      @posts=Post.all
+     flash[:notice] = "投稿に成功しました"
   end
   
   def edit

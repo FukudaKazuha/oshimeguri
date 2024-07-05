@@ -1,9 +1,11 @@
 <% if user_signed_in? && @user == current_user %>
 
 <h1>マイページ</h1>
+<p><%= flash[:notice] %></p>
 <!--プロフィール写真-->
 <%= @user.profile_image %> <h2>ユーザー名：<%= @user.username %></h2>
-<h3>自己紹介：<%= @user.introduction %></h3>
+<!--自己紹介、入力すれば出てくる-->
+<h4><%= @user.introduction %></h4>
  <p><%= link_to "プロフィール編集", edit_user_path(@user.id) %></p>
 
     

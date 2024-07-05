@@ -6,7 +6,7 @@
   
  <body>
   <h1>推し巡り</h1>
-  
+   <p><%= flash[:notice] %></p>
  
    <br>
    <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>

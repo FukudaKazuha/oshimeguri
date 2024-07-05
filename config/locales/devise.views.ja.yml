@@ -68,9 +68,9 @@ ja:
       new:
         resend_unlock_instructions: "アカウントの凍結解除方法を再送する"
     errors:
-      # models:
-      #   user:
-      #     attributes:
+      models:
+        user:
+          attributes:
             username:
               blank: を入力してください
    
