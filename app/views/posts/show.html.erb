@@ -11,12 +11,10 @@
 <p><%= @post.body %></p>
 
 <p>
-<%# if @post.user == current_user %>
+<% if @post.user == current_user %>
  <%= link_to "投稿編集", edit_post_path(@post.id) %>
-<%# end %>
 </p>
 <p>
-<%# if @post.user == current_user %>
  <%= link_to "投稿削除",post_path(@post.id), method: :delete, "data-confirm"=>"本当に消しますか？" %>
-<%# end %>
 </p>
+<% end %>

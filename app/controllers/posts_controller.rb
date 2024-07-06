@@ -27,10 +27,18 @@ class PostsController < ApplicationController
   end
   
   def edit
+    user = User.find(params[:id])
+    unless user.id == current_user.id
+     redirect_to edit_post_path
+    end
      @post = Post.find(params[:id])
   end
   
   def update
+    user = User.find(params[:id])
+    unless user.id == current_user.id
+     redirect_to post_images_path
+    end
     @post = Post.find(params[:id])
    if @post.update(post_params)
       flash[:notice] = "更新に成功しました"
