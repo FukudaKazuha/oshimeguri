@@ -8,7 +8,7 @@ class User < ApplicationRecord
   # プロフィール写真を設定しなくても大丈夫に
   after_initialize :set_default_profile_picture
   
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
 # ゲストログイン
   def self.guest
