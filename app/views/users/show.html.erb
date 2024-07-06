@@ -4,10 +4,9 @@
 <p><%= flash[:notice] %></p>
 <!--プロフィール写真-->
 <%= @user.profile_image %> 
-<%#= image_tag @users.profile_image, class: 'post-image' if @users.profile_image.attached? %>
 <h2>ユーザー名：<%= @user.username %></h2>
 <!--自己紹介、入力すれば出てくる-->
-<h4><%= @user.introduction %></h4>
+<h4>自己紹介：<%= @user.introduction %></h4>
  <p><%= link_to "プロフィール編集", edit_user_path(@user.id) %></p>
 
     
@@ -27,12 +26,15 @@
  　<% end %>
 
   
-  
+  <!--他のユーザー-->
    <% else %>
     <h1>ユーザー詳細ページ</h1>
+    <!--プロフィール写真-->
+   
     <h2>ユーザー名：<%= @user.username %></h2>
+    <!--自己紹介文-->
   
-    <p>ユーザーの投稿一覧</p>
+    <h2>ユーザーの投稿一覧</h2>
   
   <% end %>
 
