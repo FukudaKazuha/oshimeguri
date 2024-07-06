@@ -1,6 +1,7 @@
 <% if user_signed_in? && @user == current_user %>
 
 <h1>マイページ</h1>
+<!--ログインフラッシュメッセージ-->
 <p><%= flash[:notice] %></p>
 <!--プロフィール写真-->
 <%= @user.profile_image %> 
@@ -12,18 +13,12 @@
     
  <h2>自分の投稿一覧</h2>
   <% @posts.each do |post| %>
-  
+  <!--投稿画像のみ表示-->
    <%= link_to post_path(post.id) do %>
 　  <%= image_tag post.image, size: "300x300" %>
 　 <% end %>
 　　 　
-     <!-- 　<h2>施設や道の場所名</h2>-->
-   　 <!--   <span><#%= post.title %></span>-->
-      
-   　 <!--    <h2>投稿文</h2>-->
-     <!--　  <span><%#= post.body %></span>-->
-      
- 　<% end %>
+  <% end %>
 
   
   <!--他のユーザー-->
