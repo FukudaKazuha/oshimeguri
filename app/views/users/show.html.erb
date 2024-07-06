@@ -4,7 +4,9 @@
 <!--ログインフラッシュメッセージ-->
 <p><%= flash[:notice] %></p>
 <!--プロフィール写真-->
-<%= @user.profile_image %> 
+<%#= @user.profile_image %> 
+<%= image_tag @user.get_profile_image(100,100)  %>
+  
 <h2>ユーザー名：<%= @user.username %></h2>
 <!--自己紹介-->
 <h4>自己紹介：<%= @user.introduction %></h4>
