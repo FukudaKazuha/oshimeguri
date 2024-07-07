@@ -14,14 +14,14 @@
   <body>
     <header>
       <h1>押し巡り</h1>
-    　<!--<h1>押し巡り</h1>-->
     
      <%# if user_signed_in? && @user == current_user %>
+     <div class="header-bottom">
      <% if user_signed_in? %>
       <%= link_to "新規投稿", new_post_path %>
       <%= link_to "マイページ", users_mypage_path %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-         
+    </div>  
          <!--ユーザー検索ボタン-->
          
          <!--投稿検索ボタン-->
@@ -30,10 +30,11 @@
       
       <!--ここから、ログインしていない時の表示-->
      <% else %>
-        <%= link_to "新規登録", new_user_registration_path %>
-      
-        <%= link_to "ログイン", new_user_session_path %>
+     <div class="header-bottom">
+       <%= link_to "新規登録", new_user_registration_path %>
+       <%= link_to "ログイン", new_user_session_path %>
      <% end %>
+     </div>
     </header>
     
     <%= yield %>

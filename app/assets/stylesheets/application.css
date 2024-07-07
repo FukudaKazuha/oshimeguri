@@ -1,8 +1,11 @@
+/* 
+  *= require_self 
+  *= require_tree . 
+*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #6c6b6b;
 }
 
 
@@ -12,7 +15,7 @@ header{
   margin: 0 auto;
   text-align:center;
   position: relative;
-  background-color: gray
+  background-color: #778899
 }
 
 h1{
@@ -21,4 +24,19 @@ h1{
   font-family: HiraMinProN-W6;
   font-size: 30px;
 }
+
+.header-bottom{
+  width: 100%;
+  color:black;
+  
+}
+
+.main-visual {
+  width: 100%; 
+  height: 150px; 
+  background-color: #F5F5F5	;
+  text-align: center;
+}
+
+
 
