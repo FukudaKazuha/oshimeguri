@@ -18,7 +18,7 @@ header{
   background-color: #778899
 }
 
-h1{
+.title{
   color: white;
   text-align: center;
   font-family: HiraMinProN-W6;
@@ -30,13 +30,3 @@ h1{
   color:black;
   
 }
-
-.main-visual {
-  width: 100%; 
-  height: 150px; 
-  background-color: #F5F5F5	;
-  text-align: center;
-}
-
-
-

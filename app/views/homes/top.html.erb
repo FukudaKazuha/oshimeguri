@@ -1,12 +1,11 @@
 
- 
-  
- 
   <!--ナビ-->
   <!--ログアウトフラッシュメッセージ-->
-   <p><%= flash[:notice] %></p>
-   
+  
   <div class="main-visual">
+   <div class="flash">
+   <p><%= flash[:notice] %></p>
+   </div>
    <br>
    <div><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %></div>
    </br>
@@ -20,6 +19,7 @@
  <main>
   <div>
   <h2>〜推し巡りとは〜</h2>
+  <br>
    このウェブサイトは、いわゆる推しが訪れた場所を聖地巡礼して</br>
    そのオタ活を投稿して情報発信することを目的としたコミュニティーサイトです。</br>
    投稿検索などで他の聖地巡礼スポットを発見したり</br>

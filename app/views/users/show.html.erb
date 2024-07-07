@@ -1,18 +1,35 @@
+<head>
+  <link rel="stylesheet" href="../../assets/stylesheets/users_show.css" />
+</head>
+
+<body>
+ 
 <% if user_signed_in? && @user == current_user %>
-
-<h1>マイページ</h1>
+<div class="main-visual">
+ <h1>マイページ</h1>
+ 
+ <div class="profile_link">
+ <%= link_to "プロフィール編集", edit_user_path(@user.id) %>
+ </div>
 <!--ログインフラッシュメッセージ-->
-<p><%= flash[:notice] %></p>
+ <p><%= flash[:notice] %></p>
 <!--プロフィール写真-->
-<%= image_tag @user.get_profile_image(100,100)  %>
-  
-<h2>ユーザー名：<%= @user.username %></h2>
+ <%= image_tag @user.get_profile_image(100,100)  %>
+ 
+ <!--ユーザー名-->
+  <div class="user_name"><%= @user.username %></div>
+ 
 <!--自己紹介-->
-<h4>自己紹介：<%= @user.introduction %></h4>
- <p><%= link_to "プロフィール編集", edit_user_path(@user.id) %></p>
+ <div class="introduction"><%= @user.introduction %></div>
 
-    
+ 
+ 
+</div>
+ 
+<main>
+ <div class="my_posts_list">
  <h2>自分の投稿一覧</h2>
+ </div>
   <% @posts.each do |post| %>
   <!--投稿画像のみ表示-->
    <%= link_to post_path(post.id) do %>
@@ -20,6 +37,7 @@
 　 <% end %>
 　　 　
   <% end %>
+  </main>
 
   
   <!--他のユーザー-->
@@ -30,13 +48,17 @@
     <h2>ユーザー名：<%= @user.username %></h2>
     <!--自己紹介文-->
     <h4>自己紹介：<%= @user.introduction %></h4>
+    
+    <main>
+     <!--<div class="my_posts_list">-->
     <h2>ユーザーの投稿一覧</h2>
+    <!--</div>-->
     <% @posts.each do |post| %>
   <!--投稿画像のみ表示-->
    <%= link_to post_path(post.id) do %>
 　  <%= image_tag post.image, size: "300x300" %>
 　 <% end %>
   <% end %>
-  
+  </main>
   <% end %>
-
+</body>
