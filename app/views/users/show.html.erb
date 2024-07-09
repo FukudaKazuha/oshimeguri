@@ -5,60 +5,73 @@
 <body>
  
 <% if user_signed_in? && @user == current_user %>
-<div class="main-visual">
- <h1>マイページ</h1>
+<div class="main-visual2">
+ 
+ <div class="mypage">マイページ</div>
+ 
+ <!--ログインフラッシュメッセージ-->
+ <p><%= flash[:notice] %></p>
  
  <div class="profile_link">
  <%= link_to "プロフィール編集", edit_user_path(@user.id) %>
  </div>
-<!--ログインフラッシュメッセージ-->
- <p><%= flash[:notice] %></p>
+<
 <!--プロフィール写真-->
  <%= image_tag @user.get_profile_image(100,100)  %>
  
  <!--ユーザー名-->
-  <div class="user_name"><%= @user.username %></div>
+ <div class="user_name"><%= @user.username %></div>
  
 <!--自己紹介-->
  <div class="introduction"><%= @user.introduction %></div>
-
- 
  
 </div>
  
 <main>
- <div class="my_posts_list">
- <h2>自分の投稿一覧</h2>
- </div>
-  <% @posts.each do |post| %>
-  <!--投稿画像のみ表示-->
-   <%= link_to post_path(post.id) do %>
-　  <%= image_tag post.image, size: "300x300" %>
-　 <% end %>
-　　 　
-  <% end %>
-  </main>
+ <div class="my_posts_list">自分の投稿一覧</div>
+  <div class="container">
+    
+     <% @posts.each do |post| %>
+     <!--投稿画像のみ表示-->
+      
+      <%= link_to post_path(post.id) do %>
+　     <%= image_tag post.image, size: "300x300" %>
+　    <% end %>
+     <% end %>
+    </div>
+  </div>
+ </main>
 
   
   <!--他のユーザー-->
    <% else %>
-    <h1>ユーザー詳細ページ</h1>
+   <div class="main-visual2">
+    <div class="mypage">ユーザー詳細ページ</div>
+    
     <!--プロフィール写真-->
-   
-    <h2>ユーザー名：<%= @user.username %></h2>
-    <!--自己紹介文-->
-    <h4>自己紹介：<%= @user.introduction %></h4>
+ <%= image_tag @user.get_profile_image(100,100)  %>
+ 
+ <!--ユーザー名-->
+ <div class="user_name"><%= @user.username %></div>
+ 
+<!--自己紹介-->
+ <div class="introduction"><%= @user.introduction %></div>
+ 
+</div>
     
     <main>
-     <!--<div class="my_posts_list">-->
-    <h2>ユーザーの投稿一覧</h2>
-    <!--</div>-->
+     <div class="my_posts_list">ユーザーの投稿一覧</div>
+      <div class="container">
+    <div class=post_images>
     <% @posts.each do |post| %>
   <!--投稿画像のみ表示-->
    <%= link_to post_path(post.id) do %>
 　  <%= image_tag post.image, size: "300x300" %>
 　 <% end %>
   <% end %>
+  </div>
+  </div>
+  
   </main>
   <% end %>
 </body>

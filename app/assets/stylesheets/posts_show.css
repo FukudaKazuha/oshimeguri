@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #6c6b6b;
+}
+
+.post_show{
+  text-align: center;
+  padding: 20px;
+  font-size: 35px;
+  font-family: Hiragino Sans W6;
+}
+
+.flash2{
+  text-align: center;
+ 
+}
+
+.show_img{
+   text-align: center;
+   padding: 20px;
+}
+
+.shop_road_name{
+  text-align: center;
+  font-family: Hiragino Sans W6;
+  font-size:20px;
+  padding: 20px;
+}
+
+.post_text{
+  text-align: center;
+  font-family: Hiragino Sans W6;
+  font-size:20px;
+  padding: 20px;
+}
+
+.post_edit{
+  text-align: center;
+}
+
+.post_delete{
+  text-align: center;
+}

@@ -1,20 +1,30 @@
- <h1>投稿詳細ページ</h1>
- <p><%= flash[:notice] %></p>
+<head>
+  <link rel="stylesheet" href="../../assets/stylesheets/posts_show.css" />
+</head>
+
+ <div class="post_show">投稿詳細ページ</div>
+ <div class="flash2"><%= flash[:notice] %></div>
  
  <!--投稿画像-->
+ <div class="show_img">
 <%= image_tag @post.image, size: "300x300" %>
+</div>
 
-<h4>施設や道の場所名</h4>
+<div class="shop_road_name">施設や道の場所名
 <p><%= @post.title %></p>
+</div>
 
-<h4>投稿文</h4>
+<div class="post_text">投稿文
 <p><%= @post.body %></p>
+</div>
 
-<p>
+
 <% if @post.user == current_user %>
+<div class="post_edit">
  <%= link_to "投稿編集", edit_post_path(@post.id) %>
-</p>
-<p>
+</div>
+<div class="post_delete">
  <%= link_to "投稿削除",post_path(@post.id), method: :delete, "data-confirm"=>"本当に消しますか？" %>
-</p>
+</div>
 <% end %>
+

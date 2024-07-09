@@ -7,28 +7,63 @@
 
 
 /*プロフィール写真、ユーザーネーム、自己紹介、プロフィール編集の枠*/
-.main-visual{
+.main-visual2{
 text-align: left;
-padding-left: 200px
+padding-left: 200px;
+padding-bottom: 60px;
+background-color: #F5F5F5	;
 }
+
+.mypage{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 35px;
+  font-family: Hiragino Sans W6;
+}
+
 /*プロフィール編集リンク*/
 .profile_link{
-  display: inline;
+   padding: 10px;
 }
-
+/*ユーザーネーム*/
 .user_name{
   font-size: 30px;
-  font-family: Arial;
+  font-family: Hiragino Maru Gothic Pro W4;
   display:inline;
-  padding-left: 10px;
+  /*padding-left: 10px;*/
+  color:#708090;
+  margin-left: 50px;
 }
-
+/*自己紹介*/
 .introduction{
   font-size: 20px;
-  font-family: Arial;
+  font-family: Hiragino Maru Gothic Pro W4;
   display:inline;
+  color:#708090;
+  margin-left: 50px;
 }
 
+/*投稿一覧の枠*/
+main{
+  width: 100%;
+  
+}
+
+/*投稿一覧*/
 .my_posts_list{
-text-align: left;
+padding-top: 10px;
+padding-bottom: 10px;
+text-align: center;
+font-size: 25px;
+font-family: HiraMinProN-W6;
+}
+
+.container{
+   display: flex;
+   flex-wrap: wrap;
+   width: auto;
+}
+
+.img{
+  padding: 10px;
 }
