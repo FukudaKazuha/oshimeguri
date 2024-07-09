@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #6c6b6b;
+  
 }
 
 .post_show{
@@ -38,8 +38,11 @@
 
 .post_edit{
   text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .post_delete{
   text-align: center;
+  margin-top: 10px;
 }
