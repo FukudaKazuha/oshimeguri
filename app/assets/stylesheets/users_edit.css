@@ -2,5 +2,40 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #6c6b6b;
+}
+
+.profile_edit{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 35px;
+  font-family: Hiragino Sans W6;
+}
+
+.edit_prfile_image{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-family: Hiragino Sans W6;
+}
+
+.edit_user_name{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-family: Hiragino Sans W6;
+}
+
+.edit_introduction{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-family: Hiragino Sans W6;
+}
+
+.edit_update{
+  text-align: center;
 }

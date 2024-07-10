@@ -2,7 +2,7 @@
   <link rel="stylesheet" href="../../assets/stylesheets/users_edit.css" />
 </head>
 
-<h1>プロフィール編集</h1>
+<div class="profile_edit">プロフィール編集</div>
  <!--プロフィールの更新失敗バリデーション-->
     <% if @user.errors.any? %>
       <%= @user.errors.count %>件のエラー
@@ -14,18 +14,21 @@
     <% end %>
 
  <%= form_with model: @user do |f| %>
-  <p>
-  <label for="inputImage">プロフィール写真</label>
+  <div class="edit_prfile_image">
+  <label for="inputImage">プロフィール写真</label></br>
    <%= f.file_field :profile_image, accept: "image/*" %>  
-  </p>
-  <p>
-  <label for="inputName">ユーザーネーム</label>
+  </div>
+  
+  <div class="edit_user_name">
+  <label for="inputName">ユーザーネーム</label></br>
    <%= f.text_field :username, id:"inputName"%>
-  </p>
-  <p>
-  <label for="inputIntroduction">自己紹介</label>
+  </div>
+  
+  <div class="edit_introduction">
+  <label for="inputIntroduction">自己紹介</label></br>
    <%= f.text_area :introduction, id:"inputIntroduction"%>
-  </p>
-  <p><%= f.submit "更新" %></p>
+  </div>
+  
+  <div class="edit_update"><%= f.submit "更新" %></div>
   
  <% end %>
