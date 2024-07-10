@@ -1,8 +1,8 @@
 <head>
-  <link rel="stylesheet" href="../../assets/stylesheets/users_edit.css" />
+  <link rel="stylesheet" href="../../assets/stylesheets/posts_edit.css" />
 </head>
 
-<div>投稿編集ページ</div>
+<div class="post_edit">投稿編集ページ</div>
  <!--投稿の更新失敗バリデーション-->
     <% if @post.errors.any? %>
       <%= @post.errors.count %>件のエラー
@@ -15,20 +15,22 @@
     
      <!--更新投稿フォーム-->
      <%= form_with model: @post do |f| %>
-     <p>
-      <h4>投稿画像</h4>
-  　　<%= f.file_field :image, accept: "image/*" %>
-     </p>
-     <p>
-      <label for="inputTitle">施設や道の場所名</label>
-      <%= f.text_field :title, autofocus: true, id:"inputTitle", placeholder:"お店の名前など"%>
-     </p> 
      
-     <p>
-       <label for="inputBody">投稿文</label>
+      <div class="edit_post_image">投稿画像</br>
+  　　<%= f.file_field :image, accept: "image/*" %>
+     </div>
+     
+     <div class="edit_title">
+      <label for="inputTitle">施設や道の場所名</label></br>
+      <%= f.text_field :title, autofocus: true, id:"inputTitle", placeholder:"お店の名前など"%>
+     </div>
+     
+     <div class="edit_post">
+       <label for="inputBody">投稿文</label></br>
       <%= f.text_area :body, autofocus: true, id:"inputBody", placeholder:"投稿したい文"%>
-     </p>
-     <p>
-      <%= f.submit "更新" %>
-      </p>
+     </div>
+     
+     <div class=edit_update><%= f.submit "更新" %></div>
+     
+      
      <% end %>
