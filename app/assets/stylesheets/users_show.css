@@ -52,7 +52,7 @@ main{
 /*投稿一覧*/
 .my_posts_list{
 padding-top: 10px;
-padding-bottom: 10px;
+padding-bottom: 50px;
 text-align: center;
 font-size: 25px;
 font-family: HiraMinProN-W6;
@@ -64,6 +64,6 @@ font-family: HiraMinProN-W6;
    width: auto;
 }
 
-.img{
-  padding: 10px;
-}
+/*.a{*/
+/*  padding: 10px;*/
+/*}*/

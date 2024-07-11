@@ -4,15 +4,15 @@
   box-sizing: border-box;
 }
 
-.post_edit{
+.post_page{
   text-align: center;
+  font-size: 35px;
   margin-top: 30px;
   margin-bottom: 10px;
-  font-size: 35px;
   font-family: Hiragino Sans W6;
 }
 
-.edit_post_image{
+.post_new_image{
   text-align: center;
   margin-top: 50px;
   margin-bottom: 20px;
@@ -20,7 +20,7 @@
   font-family: Hiragino Sans W6;
 }
 
-.edit_title{
+.post_new_title{
   text-align: center;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -28,7 +28,7 @@
   font-family: Hiragino Sans W6;
 }
 
-.edit_bo{
+.post_new_body{
   text-align: center;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -36,6 +36,6 @@
   font-family: Hiragino Sans W6;
 }
 
-.edit_update{
+.post_button{
   text-align: center;
 }
