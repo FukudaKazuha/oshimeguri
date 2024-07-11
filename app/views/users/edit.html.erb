@@ -4,6 +4,7 @@
 
 <div class="profile_edit">プロフィール編集</div>
  <!--プロフィールの更新失敗バリデーション-->
+  <div class="errors">
     <% if @user.errors.any? %>
       <%= @user.errors.count %>件のエラー
       <ul>
@@ -12,6 +13,7 @@
         <% end %>
       </ul>
     <% end %>
+    </div>
 
  <%= form_with model: @user do |f| %>
   <div class="edit_prfile_image">

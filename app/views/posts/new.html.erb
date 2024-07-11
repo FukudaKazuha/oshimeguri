@@ -3,6 +3,8 @@
 </head>
 
 <div class="post_page">投稿ページ</div>
+
+<div class="errors">
 <% if @post.errors.any? %>
   <%= @post.errors.count %>件のエラーが発生しました
   <ul>
@@ -11,6 +13,8 @@
     <% end %>
   </ul>
 <% end %>
+</div>
+
 
  <%= form_with model: @post do |f| %>
 　<div class="post_new_image">投稿画像</br>

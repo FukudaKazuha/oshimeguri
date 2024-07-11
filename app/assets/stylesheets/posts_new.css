@@ -12,6 +12,10 @@
   font-family: Hiragino Sans W6;
 }
 
+.errors{
+  text-align: center;
+}
+
 .post_new_image{
   text-align: center;
   margin-top: 50px;
