@@ -1,19 +1,18 @@
-<h2>ログイン</h2>
+<head>
+  <link rel="stylesheet" href="../../assets/stylesheets/log_.css" />
+</head>
+
+<div class="log_in">ログイン</div>
 
 <%= form_with model: @user, url: user_session_path do |f| %>
 
-  <div class="field">
+  <div class="field_user_name">
    <%= f.label :username %><br>
    <%= f.text_field :username %>
   </div>
-  
-  <!--<div class="field">-->
-  <!--  <%#= f.label :email %><br />-->
-  <!--  <%#= f.email_field :email, autofocus: true, autocomplete: "email" %>-->
-  <!--</div>-->
 
-  <div class="field">
-    <%= f.label :password %><br />
+  <div class="field_password">
+    <%= f.label :password %><br/>
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 

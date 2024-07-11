@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #6c6b6b;
 }
 
 .main-visual1 {
@@ -15,6 +14,7 @@
 .flash {
    text-align: center;
    padding-top:20px;
+   color: blue;
 }
 
 .log_in{
@@ -24,11 +24,27 @@
 
 main {
   width: 100%;
-  display: flex;
   text-align: center;
   justify-content: center; 
   align-items:center;
-  padding: 80px 0; 
+  padding: 40px 0; 
+  color: red;
 }
 
+.oshimeguri_introduce{
+  text-align: center;
+  font-size: 30px;
+  font-family: HiraMinProN-W6;
+  color: black;
+  
+}
 
+.oshimeguri_introduce2{
+  margin-top: 20px;
+  color: white;
+  font-family: HiraMinProN-W6;
+  letter-spacing:3px;
+  line-height:40px;
+  background-color: #B0C4DE;
+  padding: 20px;
+}

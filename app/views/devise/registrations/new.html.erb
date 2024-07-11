@@ -1,4 +1,8 @@
-<h2>新規登録</h2>
+<head>
+  <link rel="stylesheet" href="../../assets/stylesheets/sign_up.css" />
+</head>
+
+<div class="new_post">新規登録</div>
 
 <%= form_with model: @user, url: user_registration_path do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
