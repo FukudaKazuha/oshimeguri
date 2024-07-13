@@ -35,10 +35,6 @@ class PostsController < ApplicationController
   end
   
   def update
-    user = User.find(params[:id])
-    unless user.id == current_user.id
-     redirect_to post_images_path
-    end
     @post = Post.find(params[:id])
    if @post.update(post_params)
       flash[:notice] = "更新に成功しました"
@@ -46,9 +42,6 @@ class PostsController < ApplicationController
    else
      render :edit
    end
-    # post = Post.find(params[:id])
-    # post.update(post_params)
-    # redirect_to post_path(post.id)
   end
   
   def destroy

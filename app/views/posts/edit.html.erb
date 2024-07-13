@@ -4,6 +4,7 @@
 
 <div class="post_edit">投稿編集ページ</div>
  <!--投稿の更新失敗バリデーション-->
+ 　<div class="errors">
     <% if @post.errors.any? %>
       <%= @post.errors.count %>件のエラー
       <ul>
@@ -12,7 +13,7 @@
         <% end %>
       </ul>
     <% end %>
-    
+    </div>
      <!--更新投稿フォーム-->
      <%= form_with model: @post do |f| %>
      
