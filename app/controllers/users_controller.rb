@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :destroy]
   before_action :authenticate_user!, only: [:mypage]
   # new必要？
   def new
@@ -46,8 +46,14 @@ class UsersController < ApplicationController
   end
   
   def destroy
+    # ログアウト
     flash[:notice] = "ログアウトしました"
     redirect_to root_path
+    # 退会
+    @user = User.find(params[:id]) 
+    @user.destroy
+    flash[:notice] = 'ユーザーが退会しました。'
+    
   end
   
   
@@ -59,7 +65,7 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find([:id])
+    @user = User.find(params[:id])
   end
   
 end

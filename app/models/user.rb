@@ -7,8 +7,9 @@ class User < ApplicationRecord
   validates :username, presence: true
   # プロフィール写真を設定しなくても大丈夫に
   after_initialize :set_default_profile_picture
-  
+  # postsとのアソシエーション
   has_many :posts, dependent: :destroy
+  
 
 # ゲストログイン
   def self.guest
