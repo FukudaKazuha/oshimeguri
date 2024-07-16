@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   # アクティブストレージ
   has_one_attached :image
-  
+  # userとのアソシエーション
   belongs_to :user
   
   validates :title, presence: true

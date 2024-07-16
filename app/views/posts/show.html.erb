@@ -3,6 +3,7 @@
 </head>
 
  <div class="post_show">投稿詳細ページ</div>
+ <!--投稿成功フラッシュメッセージ-->
  <div class="flash2"><%= flash[:notice] %></div>
  
  <!--投稿画像-->
@@ -24,7 +25,7 @@
  <%= link_to "投稿編集", edit_post_path(@post.id) %>
 </div>
 <div class="post_delete">
- <%= link_to "投稿削除",post_path(@post.id), method: :delete, "data-confirm"=>"本当に消しますか？" %>
+ <%= link_to "投稿削除",post_path(@post.id), method: :delete, "data-confirm"=>"本当に削除しますか？" %>
 </div>
 <% end %>
 

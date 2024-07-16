@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :destroy]
   before_action :authenticate_user!, only: [:mypage]
-  # new必要？
+  
   def new
     @user=User.new
   end
-  # # create必要？
+  
   def create
     @user = User.new(user_params[:id])
     flash[:notice] = "ログインしました"
@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts=@user.posts
-    # @user = current_user
   end
   
   def mypage
@@ -38,11 +37,11 @@ class UsersController < ApplicationController
   
   def update
    @user = User.find(params[:id])
-  if @user.update(user_params)
+   if @user.update(user_params)
     redirect_to users_mypage_path
-  else
+ 　 else
     render :edit
-  end
+   end
   end
   
   def destroy
@@ -52,7 +51,7 @@ class UsersController < ApplicationController
     # 退会
     @user = User.find(params[:id]) 
     @user.destroy
-    flash[:notice] = 'ユーザーが退会しました。'
+    flash[:notice] = 'ユーザーが退会しました'
     
   end
   

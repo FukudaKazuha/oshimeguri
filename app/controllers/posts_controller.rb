@@ -20,10 +20,7 @@ class PostsController < ApplicationController
   
   def show
      @post = Post.find(params[:id])
-    # @posts=Post.all
-    # @posts=@user.posts
      @posts=current_user.posts
-    # flash[:notice] = "投稿に成功しました"
   end
   
   def edit
