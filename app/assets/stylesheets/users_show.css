@@ -64,6 +64,6 @@ font-family: HiraMinProN-W6;
    width: auto;
 }
 
-/*.a{*/
-/*  padding: 10px;*/
-/*}*/
+body {
+  background-image: image-url("hoge.jpg");
+}
