@@ -1,7 +1,6 @@
 <head>
-  <link rel="stylesheet" href="../../assets/stylesheets/log_in.css" />
+  <%= stylesheet_link_tag 'log_in'%>
 </head>
-
 <div class="log_in">ログイン</div>
 
 <%= form_with model: @user, url: user_session_path do |f| %>
