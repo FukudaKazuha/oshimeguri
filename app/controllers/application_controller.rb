@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  # ログインしているかどうか判断
+  before_action :authenticate_user
+
   
   def after_sign_in_path_for(resource)
     users_mypage_path(current_user)
@@ -19,6 +22,12 @@ class ApplicationController < ActionController::Base
     # サインイン、
       devise_parameter_sanitizer.permit(:sign_in,keys:[:username,:password])
       # devise_parameter_sanitizer.permit(:account_update,keys:[:name,:email])
+    end
+  end
+  
+  def authenticate_user
+    unless user_signed_in?
+      redirect_to new_user_session_path
     end
   end
   

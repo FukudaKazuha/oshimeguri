@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   
   
    private
-# 下のこれは必要ない？
+   
   def user_params
     params.require(:user).permit(:profile_image, :username, :introduction)
   end

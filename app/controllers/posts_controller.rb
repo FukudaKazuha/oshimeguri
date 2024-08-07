@@ -21,6 +21,8 @@ class PostsController < ApplicationController
   def show
      @post = Post.find(params[:id])
      @posts=current_user.posts
+    # redirect_to root_path
+     
   end
   
   def edit
