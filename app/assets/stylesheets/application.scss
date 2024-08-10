@@ -12,7 +12,7 @@ header{
   margin: 0 auto;
   text-align:center;
   position: relative;
-  background-color: #778899
+  background-color: #778899;
 }
 
 .title{
@@ -25,5 +25,13 @@ header{
 .header-bottom{
   width: 100%;
   color:black;
+}
+
+footer{
   
+  background-color: #808080;
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+  padding:50px;
 }
