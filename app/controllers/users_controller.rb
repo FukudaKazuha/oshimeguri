@@ -40,7 +40,7 @@ class UsersController < ApplicationController
    @user = User.find(params[:id])
    if @user.update(user_params)
     redirect_to users_mypage_path
- 　 else
+   else
     render :edit
    end
   end
