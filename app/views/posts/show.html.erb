@@ -6,6 +6,16 @@
  <!--投稿成功フラッシュメッセージ-->
  <div class="flash2"><%= flash[:notice] %></div>
  
+ <!--投稿したユーザーのアイコンとユーザーネーム-->
+ <div class="show_profile">
+  <%= link_to user_path(@post.user_id) do %>
+   <%= image_tag @user.get_profile_image(100,100)  %>
+  <% end %>
+ </div>
+ 
+ <div class="post_user_name"><%= @user.username %></div>
+ 
+ 
  <!--投稿画像-->
  <div class="show_img">
 <%= image_tag @post.image, size: "300x300" %>

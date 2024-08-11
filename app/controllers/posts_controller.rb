@@ -18,12 +18,13 @@ class PostsController < ApplicationController
     
   
   def index
+    @posts=Post.all
   end
   
   def show
      @post = Post.find(params[:id])
      @posts=current_user.posts
-    # redirect_to root_path
+     @user=@post.user
      
   end
   
