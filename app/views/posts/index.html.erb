@@ -1,10 +1,21 @@
+<head>
+ <%= stylesheet_link_tag 'posts_index'%>
+</head>
+
+<!--投稿とユーザーはリンクにすること-->
+<div class="main-visual">
 投稿検索
 
-ユーザー検索
+ ユーザー検索
 
-投稿一覧
+</div>
+
+<main>
+<div class="post.all">投稿一覧</div>
 <% @posts.each do |post| %>
  <%= link_to post_path(post.id) do %>
   <%= image_tag post.image, size: "300x300" %>
  <% end %>
 <% end %>
+
+</main>
