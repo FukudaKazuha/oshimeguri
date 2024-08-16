@@ -1,17 +1,22 @@
+<head>
+ <%= stylesheet_link_tag 'password_new'%>
+</head>
+
 <div class="forget_password">パスワードを忘れましたか？</div>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
+  <div class="mail_field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="actions">
+  <div class="password_actions">
     <%= f.submit "パスワードリセット手順を送信" %>
   </div>
 <% end %>
-<div class="render_links">
+
+<div class="pasword_render_links">
 <%= render "devise/shared/links" %>
 </div>
