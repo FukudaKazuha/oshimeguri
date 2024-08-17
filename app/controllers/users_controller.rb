@@ -53,10 +53,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id]) 
     @user.destroy
     flash[:notice] = 'ユーザーが退会しました'
-    
   end
-  
-  
   
    private
    
