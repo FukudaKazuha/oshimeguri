@@ -55,6 +55,6 @@ class PostsController < ApplicationController
   
   def correct_user
     @post = current_user.posts.find_by(id: params[:id])
-    redirect_to posts_path(params[:id]) unless @post
+    redirect_to post_path(params[:id]) unless @post
   end
 end
