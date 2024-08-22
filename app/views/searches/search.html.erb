@@ -3,18 +3,15 @@
 <!-- 検索対象が User の場合 -->
 <% if @range == "ユーザー" %>
   <table>
-    <tr>
-      <th>ユーザー名</th>
-    </tr>
     <% @users.each do |user| %>
    　  <tr>
    　  <%= link_to user_path(user.id) do %>
-     　<%= image_tag user.get_profile_image(100,100)  %>
+     　<%= image_tag user.get_profile_image(100,100) %>
       <% end %>
       </tr>
-      <tr>
-        <td><%= user.username %></td>
-      </tr>
+     
+      <%= user.username %>
+     
     <% end %>
   </table>
   

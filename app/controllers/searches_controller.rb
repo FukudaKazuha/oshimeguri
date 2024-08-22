@@ -6,7 +6,6 @@ class SearchesController < ApplicationController
 
     if @range == "ユーザー"
       @users = User.looks(params[:search], params[:word])
-      # byebug
     else
       @posts = Post.looks(params[:search], params[:word])
     end
