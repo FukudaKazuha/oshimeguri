@@ -1,0 +1,38 @@
+<table class="table table-hover table-inverse">
+  検索結果
+<!-- 検索対象が User の場合 -->
+<% if @range == "ユーザー" %>
+  <table>
+    <% @users.each do |user| %>
+   　  <tr>
+   　  <%= link_to user_path(user.id) do %>
+     　<%= image_tag user.get_profile_image(100,100) %>
+      <% end %>
+      </tr>
+     
+      <%= user.username %>
+     
+    <% end %>
+  </table>
+  
+<% else %>
+
+  <!-- 検索対象が Post の場合 -->
+  <table>
+    <tr>
+      <!--<th>施設や道の場所名</th>-->
+    </tr>
+    <% @posts.each do |post| %>
+     <tr>
+     <div class="search_img">
+     <%= link_to post_path(post.id) do %>
+      <%= image_tag post.image, size: "300x300" %>
+     <% end %>
+     </div>
+     </tr>
+      <tr>
+        <!--<td><%#= post.title %></td>-->
+      </tr>
+    <% end %>
+  </table>
+<% end %>
