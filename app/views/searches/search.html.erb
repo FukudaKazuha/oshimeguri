@@ -19,9 +19,6 @@
 
   <!-- 検索対象が Post の場合 -->
   <table>
-    <tr>
-      <!--<th>施設や道の場所名</th>-->
-    </tr>
     <% @posts.each do |post| %>
      <tr>
      <div class="search_img">
@@ -31,7 +28,7 @@
      </div>
      </tr>
       <tr>
-        <!--<td><%#= post.title %></td>-->
+        <td><%= post.title %></td>
       </tr>
     <% end %>
   </table>

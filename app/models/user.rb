@@ -9,6 +9,8 @@ class User < ApplicationRecord
   after_initialize :set_default_profile_picture
   # postsとのアソシエーション
   has_many :posts, dependent: :destroy
+  # userとのアソシエーション
+  has_many :post_comments, dependent: :destroy
   
 
 # ゲストログイン
