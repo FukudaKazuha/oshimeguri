@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   resources :posts
   
   get "search" => "searches#search"
+  
+  resources :posts, only: [:new, :create, :index, :show, :destroy] do
+    resources :post_comments, only: [:create, :destroy]
+  end
 end

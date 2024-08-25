@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   has_one_attached :image
   # userとのアソシエーション
   belongs_to :user
+  # postsとのアソシエーション
+  has_many :post_comments, dependent: :destroy
   
   validates :title, presence: true
   validates :body, presence: true
