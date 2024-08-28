@@ -3,7 +3,8 @@ Rails.application.routes.draw do
  devise_for  :admin, skip: [:registrations, :password], controllers: {
   sessions: 'admin/sessions'
  }
-  get 'admin/users'=>'admins#index'
+ 
+  resources :admins, only: [:index,:show,:destroy]
   
  devise_for :users
   devise_scope :user do

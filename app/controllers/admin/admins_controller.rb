@@ -1,4 +1,5 @@
-class Admin::AdminsController < ApplicationController
+# class Admin::AdminsController < ApplicationController
+class Admin::ConfirmationsController < Devise::ConfirmationsController
  def index
    @users=User.all
  end
@@ -10,7 +11,7 @@ class Admin::AdminsController < ApplicationController
  def destroy
    @user = User.find(params[:id]) 
    @user.destroy
-   redirect_to user_path(user.)
+   redirect_to admin_path(user.id)
  end
  
     private
