@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   # ログインしているかどうか判断
-  #before_action :require_login, except: [:top]
+  # before_action :require_login, except: [:top]
   
   def set_current_user
     @current_user=User.find_by(id :session[:user_id])
