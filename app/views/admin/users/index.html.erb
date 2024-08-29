@@ -1,0 +1,7 @@
+ユーザー一覧
+<% @users.each do |user| %>
+ <%= link_to user_path(user.id) do %>
+  <%= image_tag user.get_profile_image(50,50) %>
+ <% end %>
+ <%= user.username %>
+<% end %>

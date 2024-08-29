@@ -1,5 +1,5 @@
-# class Admin::AdminsController < ApplicationController
-class Admin::ConfirmationsController < Devise::ConfirmationsController
+class Admin::UsersController < ApplicationController
+    
  def index
    @users=User.all
  end

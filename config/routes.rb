@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
  # devise_for :admins
- devise_for  :admin, skip: [:registrations, :password], controllers: {
+ devise_for  :admins, path: :admin, skip: [:registrations, :password], controllers: {
   sessions: 'admin/sessions'
  }
  
-  resources :admins, only: [:index,:show,:destroy]
+ namespace :admin do
+  resources :users, only: [:index,:show,:destroy]
+ end
   
  devise_for :users
   devise_scope :user do

@@ -1,6 +1,6 @@
 <h3>ログイン</h3>
 
-<%= form_with (resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_with model: @admin, url: admin_session_path do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
