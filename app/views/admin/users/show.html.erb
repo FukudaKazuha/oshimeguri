@@ -1,3 +1,7 @@
+<head>
+ <%= stylesheet_link_tag 'admin_users_show'%>
+</head>
+ 
  <div class="mypage">ユーザー詳細ページ</div>
     
     <!--プロフィール写真-->
@@ -9,7 +13,7 @@
 <!--自己紹介-->
  <div class="introduction"><%= @user.introduction %></div>
  
-  <%= link_to "このユーザーを退会させる",user_path, class: "destroy-user", method: :delete, "data-confirm" => "本当に退会させますか？" %>
+  <%= link_to "このユーザーを退会させる",admin_user_path(@user), class: "destroy-user", method: :delete, "data-confirm" => "本当に退会させますか？" %>
  
 </div>
     

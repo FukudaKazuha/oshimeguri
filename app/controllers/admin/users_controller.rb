@@ -1,7 +1,10 @@
 class Admin::UsersController < ApplicationController
+skip_before_action :require_login
+before_action :authenticate_admin!
     
  def index
    @users=User.all
+   
  end
   
  def show
@@ -12,6 +15,7 @@ class Admin::UsersController < ApplicationController
  def destroy
    @user = User.find(params[:id]) 
    @user.destroy
+   
    redirect_to  admin_users_path
  end
  
