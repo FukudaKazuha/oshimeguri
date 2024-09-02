@@ -1,0 +1,33 @@
+<head>
+ <%= stylesheet_link_tag 'admin_users_show'%>
+</head>
+
+ <div class="main-visual2">
+ <div class="mypage">ユーザー詳細ページ</div>
+    
+    <!--プロフィール写真-->
+ <%= image_tag @user.get_profile_image(100,100)  %>
+ 
+ <!--ユーザー名-->
+ <div class="user_name"><%= @user.username %></div>
+ 
+<!--自己紹介-->
+ <div class="introduction"><%= @user.introduction %></div>
+ 
+  <%= link_to "このユーザーを退会させる",admin_user_path(@user), class: "destroy-user", method: :delete, "data-confirm" => "本当に退会させますか？" %>
+ 
+</div>
+    
+ <main>
+  <div class="my_posts_list">ユーザーの投稿一覧</div>
+   <div class="container">
+   <div class=post_images>
+    <% @posts.each do |post| %>
+  <!--投稿画像のみ表示-->
+   <%= link_to post_path(post.id) do %>
+　  <%= image_tag post.image, size: "300x300" %>
+　 <% end %>
+  <% end %>
+  </div>
+  </div>
+ </main>

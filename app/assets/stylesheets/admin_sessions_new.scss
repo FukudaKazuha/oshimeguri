@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.admin_login{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-family: Hiragino Sans W6;
+}
+
+.admin_email{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-family: Hiragino Sans W6;
+}
+
+.admin_password{
+ text-align: center; 
+ margin-top: 50px;
+ margin-bottom: 20px;
+ font-size: 20px;
+ font-family: Hiragino Sans W6;
+}
+
+.admin_login_button{
+ text-align: center;
+ margin-top: 50px;
+}
