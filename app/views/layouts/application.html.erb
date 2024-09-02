@@ -23,7 +23,11 @@
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
      </div>  
       <!--ここまで、ログインしている時の表示-->
-      
+      <!--管理者用ヘッダー-->
+      <% elsif admin_signed_in? %>
+     <%= link_to "ユーザー一覧", admin_users_path %>
+     <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+     </div>  
       <!--ここから、ログインしていない時の表示-->
      <% else %>
      <div class="header-bottom">
@@ -31,13 +35,7 @@
        <%= link_to "新規登録", new_user_registration_path %>
        <%= link_to "ログイン", new_user_session_path %>
      </div>
-     
-     <!--管理者用ヘッダー-->
-    <%# elsif admin_signed_in? %>
-     <%#= link_to "ユーザー一覧", admin_users_path %>
-     <%#= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-     </div>  
-    <%# end %>
+
     <% end %>
      
      
