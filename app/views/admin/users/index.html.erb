@@ -2,41 +2,11 @@
  <%= stylesheet_link_tag 'admin_users_index'%>
 </head>
 
-<div class="container">
- <div class="row">
-  <div class="offset-md-3"></div>
- 
-  <div class="col-md-6"> 
-
-  <div class="users">ユーザー一覧</div>
-   <table class="table">
-    <thead>
-     <tr>
-      <th>
-       プロフィール写真
-      </th>
-      <th>
-       ユーザー名
-      </th>
-     </tr>
-    </thead>
-
-    <tbody>
+  <div class="users">ユーザー一覧 </div>
 　  <% @users.each do |user| %>
- 　   <tr>
-      <td>
  　  　<%= link_to  admin_user_path(user.id) do %>
  　  　　 <%= image_tag user.get_profile_image(50,50) %>
  　  　<% end %>
-      </td>
-     </tr>
-      <td>
-       <%= user.username %>
-      <td>
-     </tr>
+       <div class=index_username><%= user.username %></div>
     <% end %>
-  </div>
-
-  <div class="offset-md-3"></div>
- </div>
-</div>
+ 
