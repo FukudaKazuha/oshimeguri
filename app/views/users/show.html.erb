@@ -34,7 +34,6 @@
     
      <% @posts.each do |post| %>
      <!--投稿画像のみ表示-->
-      
       <%= link_to post_path(post.id) do %>
 　     <%= image_tag post.image, size: "300x300" %>
 　    <% end %>
