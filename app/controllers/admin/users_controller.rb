@@ -17,7 +17,8 @@ before_action :authenticate_admin!
    redirect_to  admin_users_path
  end
  
-    private
+ 
+ private
    
   def user_params
     params.require(:user).permit(:profile_image, :username, :introduction)

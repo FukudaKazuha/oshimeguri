@@ -17,14 +17,15 @@ Rails.application.routes.draw do
   get 'users/mypage' => 'users#mypage'
   
   resources :users, only: [:show,:edit,:update,:destroy] do
-   delete :destroy, on: :member
+   delete :destroy, on: :member 
+   get :favorites
+   end
+  end
+  
+  gets "search" => "searches#search"
+  
+  resources :posts, only: [:new, :create, :index, :show, :edit, :destroy] do
+    resources :post_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
   end
 
-  resources :posts
-  
-  get "search" => "searches#search"
-  
-  resources :posts, only: [:new, :create, :index, :show, :destroy] do
-    resources :post_comments, only: [:create, :destroy]
-  end
-end
