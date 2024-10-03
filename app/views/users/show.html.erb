@@ -7,19 +7,17 @@
 <% if user_signed_in? && @user == current_user %>
 <div class="main-visual2">
  
- <div class="mypage">マイページ</div>
- 
+ <div class="mypage">マイページ</div> 
+
  
  <!--ログインフラッシュメッセージ-->
  <p><%= flash[:notice] %></p>
  
  <div class="link">
- <%= link_to "プロフィール編集", edit_user_path(@user.id) %>
- <%= link_to "いいね一覧",user_likes_path(@user.id) %>
+  <%= link_to "プロフィール編集", edit_user_path(@user.id) %>
+  <%= link_to "いいね一覧",user_likes_path(@user.id) %>
  </div>
 
- 
- 
 <!--プロフィール写真-->
  <%= image_tag @user.get_profile_image(100,100)  %>
  
