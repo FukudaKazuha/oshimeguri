@@ -2,11 +2,14 @@ class LikesController < ApplicationController
   before_action :set_user_and_post 
   
   def create
-   @post = Post.find(post_params[:id])
+   post = Post.find(params[:post_id])
+   like = current_user.likes.new(post_id: post.id)
+   # @post = Post.find(post_params[:id])
    # @user = User.find(params[:id])
-   Like.create
-   redirect_to post_path(@post.id)
+   @post_like.save
+   redirect_to post_path(post)
   end
+  
   
   def index
    @posts=current_user.like_posts
