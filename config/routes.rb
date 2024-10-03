@@ -16,15 +16,19 @@ Rails.application.routes.draw do
   root to: "homes#top"
   get 'users/mypage' => 'users#mypage'
   
-  resources :users, only: [:show,:edit,:update,:destroy] do
+  resources :users, only: [:index,:show,:edit,:update,:destroy] do
    delete :destroy, on: :member
+   resources :likes, only: [:index] 
   end
-
-  resources :posts
+  
+  
+  # resources :likes, only: [:index,:create,:destroy] 
+ 
   
   get "search" => "searches#search"
   
-  resources :posts, only: [:new, :create, :index, :show, :destroy] do
+  resources :posts, only: [:new, :create, :index, :show, :edit, :destroy] do
     resources :post_comments, only: [:create, :destroy]
+    resources :likes, only: [:create,:destroy] 
   end
 end

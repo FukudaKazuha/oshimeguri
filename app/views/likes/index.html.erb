@@ -1,0 +1,10 @@
+<%= @user.username %>のいいね一覧
+<!--<%# if @likes count == 0 %>-->
+<!-- <p>いいねはまだありません</p>-->
+<!--<%# else %>-->
+<% @posts.each do |post| %>
+ <%= post.title %>
+ <%#= link_to post_path(post.id) do %>
+  <%#= image_tag post.image, size: "300x300" %>
+ <%# end %>  
+<% end %>

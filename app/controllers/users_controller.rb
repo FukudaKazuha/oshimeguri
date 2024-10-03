@@ -55,6 +55,21 @@ class UsersController < ApplicationController
     flash[:notice] = 'ユーザーが退会しました'
   end
   
+  # def liked_posts
+  # @user = User.find_by(id: params[:id])
+  # @liked_posts = @user.like_posts
+  # end
+  
+  
+  def likes
+    @user = User.find(params[:id])
+    likes= Like.where(user_id: @user.id).pluck(:post_id)
+    @like_posts = Post.find(likes)
+    @post = Post.find(params[:id])
+  end
+  
+  
+  
    private
    
   def user_params
@@ -64,5 +79,7 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
+  
+  
   
 end
