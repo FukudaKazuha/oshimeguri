@@ -23,6 +23,36 @@
 <div class ="post_created">
  <%= @post.created_at.strftime('%Y/%m/%d') %>
 </div>
+
+<<<<<<< HEAD
+<div class="like">
+ <% if @post.liked_by?(current_user) %>
+  <p>
+   <%= link_to post_likes_path(@post), method: :delete do %>
+     ♥<%= @post.likes.count %> いいね
+=======
+<div class="favorite">
+ <% if @post.favorited_by?(current_user) %>
+  <p>
+   <%= link_to post_favorite_path(@post), method: :delete do %>
+     ♥<%= @post.favorites.count %> いいね
+>>>>>>> origin/feature/favorite
+   <% end %>
+  </p>
+   <% else %>
+  <p>
+<<<<<<< HEAD
+   <%= link_to post_likes_path(@post.id), method: :post do %>
+     ♡<%= @post.likes.count %> いいね
+=======
+   <%= link_to post_favorite_path(@post), method: :post do %>
+     ♡<%= @post.favorites.count %> いいね
+>>>>>>> origin/feature/favorite
+   <% end %>
+  </p>
+ <% end %>
+</div>
+
 <div class="shop_road_name">施設や道の場所名
 <p><%= @post.title %></p>
 </div>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :destroy]
+  before_action :set_user, only: [:show, :destroy, :favorite]
   before_action :authenticate_user!, only: [:mypage]
   before_action :authenticate_user, {only: [:top]}
   
@@ -55,6 +55,30 @@ class UsersController < ApplicationController
     flash[:notice] = 'ユーザーが退会しました'
   end
   
+<<<<<<< HEAD
+  # def liked_posts
+  # @user = User.find_by(id: params[:id])
+  # @liked_posts = @user.like_posts
+  # end
+  
+  
+  def likes
+    @user = User.find(params[:id])
+    likes= Like.where(user_id: @user.id).pluck(:post_id)
+    @like_posts = Post.find(likes)
+    @post = Post.find(params[:id])
+  end
+  
+  
+  
+=======
+  def favorites
+    @favorites = Favorites.where(user_id: @user.id).pluck(:post_id)
+    @favorite_posts = Post.find(favorites)
+  end
+  
+  
+>>>>>>> origin/feature/favorite
    private
    
   def user_params
@@ -64,5 +88,7 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
+  
+  
   
 end
