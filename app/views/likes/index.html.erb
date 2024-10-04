@@ -1,9 +1,13 @@
-<%= @user.username %>のいいね一覧
-<% if @post.likes.count = 0 %>
+<head>
+ <%= stylesheet_link_tag 'likes'%>
+</head>
+
+<div class="all_likes"><%= @user.username %>のいいね一覧</div>
+<%# if @post.likes.count = 0 %>
  <p>いいねした投稿はまだありません</p>
-<% else %>
+<%# else %>
  <% @posts.each do |post| %>
   <%= link_to post_path(post.id) do %>
-  <%= image_tag post.image, size: "300x300" %>
+   <%= image_tag post.image, size: "300x300" %>
+  <% end %> 
  <% end %> 
-<% end %> 
