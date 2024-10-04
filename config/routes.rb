@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   root to: "homes#top"
   get 'users/mypage' => 'users#mypage'
   
+<<<<<<< HEAD
   resources :users, only: [:index,:show,:edit,:update,:destroy] do
    delete :destroy, on: :member
    resources :likes, only: [:index] 
@@ -32,3 +33,18 @@ Rails.application.routes.draw do
     resource :likes, only: [:create,:destroy] 
   end
 end
+=======
+  resources :users, only: [:show,:edit,:update,:destroy] do
+   delete :destroy, on: :member 
+   get :favorites
+   end
+  end
+  
+  gets "search" => "searches#search"
+  
+  resources :posts, only: [:new, :create, :index, :show, :edit, :destroy] do
+    resources :post_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
+  end
+
+>>>>>>> origin/feature/favorite

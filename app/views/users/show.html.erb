@@ -17,6 +17,8 @@
   <%= link_to "プロフィール編集", edit_user_path(@user.id) %>
   <%= link_to "いいね一覧",user_likes_path(@user.id) %>
  </div>
+ 
+ <%= link_to "いいね一覧",  favorites_userpath(@user) %>
 
 <!--プロフィール写真-->
  <%= image_tag @user.get_profile_image(100,100)  %>

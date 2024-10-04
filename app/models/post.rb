@@ -5,9 +5,13 @@ class Post < ApplicationRecord
   belongs_to :user
   # post_commentとのアソシエーション
   has_many :post_comments, dependent: :destroy
+<<<<<<< HEAD
   # いいねとのアソシエーション
   has_many :likes
   has_many :users, through: :likes
+=======
+  has_many :favorites, dependent: :destroy
+>>>>>>> origin/feature/favorite
   
   validates :title, presence: true
   validates :body, presence: true
@@ -36,8 +40,13 @@ class Post < ApplicationRecord
     end
   end
   
+<<<<<<< HEAD
   def liked_by?(user)
    likes.where(user_id: user.id).exists?
+=======
+  def favorited_by?(user)
+    favorites.exists?(user_id: user.id)
+>>>>>>> origin/feature/favorite
   end
   
 end

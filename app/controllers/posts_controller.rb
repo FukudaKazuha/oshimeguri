@@ -47,6 +47,7 @@ class PostsController < ApplicationController
     redirect_to users_mypage_path(@post)
   end
   
+  
     # 投稿データのストロングパラメータ
   private
 
