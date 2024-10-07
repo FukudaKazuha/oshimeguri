@@ -5,6 +5,8 @@ class Post < ApplicationRecord
   belongs_to :user
   # postsとのアソシエーション
   has_many :post_comments, dependent: :destroy
+  has_many :likes
+  has_many :users, through: :likes
   
   validates :title, presence: true
   validates :body, presence: true
@@ -33,6 +35,7 @@ class Post < ApplicationRecord
     end
   end
   
+   def liked_by?(user)
+    likes.exists?(user_id: user.id)
+   end
 end
-
-

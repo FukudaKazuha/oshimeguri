@@ -18,13 +18,13 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show,:edit,:update,:destroy] do
    delete :destroy, on: :member
+   resources :likes, only: [:index]
   end
-
-  resources :posts
   
   get "search" => "searches#search"
   
-  resources :posts, only: [:new, :create, :index, :show, :destroy] do
+  resources :posts do
     resources :post_comments, only: [:create, :destroy]
+    resource :likes, only: [:create,:destroy]
   end
 end
