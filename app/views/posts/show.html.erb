@@ -5,6 +5,7 @@
  <div class="post_show">投稿詳細ページ</div>
  <!--投稿成功フラッシュメッセージ-->
  <div class="flash2"><%= flash[:notice] %></div>
+
  
  <!--投稿したユーザーのアイコンとユーザーネーム-->
  <div class="show_profile">
@@ -30,6 +31,8 @@
 <div class="post_text">投稿文
 <p><%= @post.body %></p>
 </div>
+
+<%#= link_to "マップを見る", %>
 
 
 <% if @post.user == current_user %>

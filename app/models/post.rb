@@ -9,6 +9,8 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true
   validates :image, presence: true
+  # mapに必要なもの
+  # validates :address, presence: true
   
    def get_image(width, height)
     unless image.attached?
@@ -32,6 +34,10 @@ class Post < ApplicationRecord
       @post = Post.all
     end
   end
+  
+# mapに必要なもの
+  geocoded_by :address
+  after_validation :geocode
   
 end
 
