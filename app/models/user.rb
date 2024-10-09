@@ -11,7 +11,9 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   # userとのアソシエーション
   has_many :post_comments, dependent: :destroy
-  
+  # テスト
+  has_many :likes, dependent: :destroy
+  has_many :like_posts, through: :likes, source: :post
 
 # ゲストログイン
   def self.guest
