@@ -24,16 +24,19 @@
 <div class ="post_created">
  <%= @post.created_at.strftime('%Y/%m/%d') %>
 </div>
+
+
 <div class="shop_road_name">施設や道の場所名
-<p><%= @post.title %></p>
+ <p><%= @post.title %></p>
 </div>
 
 <div class="post_text">投稿文
 <p><%= @post.body %></p>
 </div>
 
-<%#= link_to "マップを見る", %>
-
+<div class ="map">
+ <%= link_to "マップを見る",post_map_path(@post.id) %>
+</div>
 
 <% if @post.user == current_user %>
 <div class="post_edit">

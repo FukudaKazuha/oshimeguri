@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+ 
  devise_for  :admins, path: :admin, skip: [:registrations, :password], controllers: {
   sessions: 'admin/sessions'
  }
@@ -20,11 +21,11 @@ Rails.application.routes.draw do
    delete :destroy, on: :member
   end
 
-  resources :posts
   
   get "search" => "searches#search"
   
-  resources :posts, only: [:new, :create, :index, :show, :destroy] do
+  resources :posts do
     resources :post_comments, only: [:create, :destroy]
+    resource :map, only: [:show]
   end
 end

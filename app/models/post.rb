@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   validates :body, presence: true
   validates :image, presence: true
   # mapに必要なもの
-  # validates :address, presence: true
+  validates :address, presence: true
   
    def get_image(width, height)
     unless image.attached?
