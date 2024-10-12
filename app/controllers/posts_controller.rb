@@ -19,15 +19,15 @@ class PostsController < ApplicationController
     
   
   def index
-    # @posts=Post.all
-    # respond_to do |format|
-      # format.html do
-      #   @posts = Post.page(params[:id])
-      # end
-      # format.json do
+  # respond_to do |format|
+  #     format.html do
+  #       # @posts = Post.page(params[:page])
+  #     end
+  #     format.json do
         @posts = Post.all
       # end
     # end
+    
   end
   
   

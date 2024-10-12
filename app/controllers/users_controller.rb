@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :set_user, only: [:show, :destroy]
+  before_action :set_user, only: [:show, :destroy]
   before_action :authenticate_user!, only: [:mypage]
   before_action :authenticate_user, {only: [:top]}
   
@@ -61,8 +61,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(:profile_image, :username, :introduction)
   end
 
-  # def set_user
-  #   @user = User.find(params[:id])
-  # end
+  def set_user
+    @user = User.find_by(id:params[:id])
+  end
   
 end
