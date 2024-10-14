@@ -12,6 +12,7 @@ Rails.application.routes.draw do
  devise_for :users
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+    get '/users/sign_out' => 'devise/sessions#destroy'
   end
   
   root to: "homes#top"
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show,:edit,:update,:destroy] do
    delete :destroy, on: :member
+   resources :favorites, only: [:index]
   end
 
   
@@ -26,6 +28,7 @@ Rails.application.routes.draw do
   
   resources :posts do
     resources :post_comments, only: [:create, :destroy]
+    resource :favorite, only: [:create,:destroy]  
     resource :map, only: [:show]
   end
 end

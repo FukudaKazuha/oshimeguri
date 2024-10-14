@@ -1,0 +1,11 @@
+<head>
+  <%= stylesheet_link_tag 'favorites_index'%>
+</head>
+
+<div class="favorites"><%= @user.username %>のいいね一覧</div>
+
+<% @posts.each do |post| %>
+ <%= link_to post_path([post.id]) do %>
+  <%= image_tag post.image, size: "300x300" %>
+ <% end %>
+<% end %> 

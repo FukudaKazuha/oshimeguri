@@ -22,9 +22,15 @@
   </div>
   
   <div class="edit_user_name">
-  <label for="inputName">ユーザーネーム</label></br>
+   <!--一般のユーザーの場合はユーザーネームの変更を可能とする-->
+  <% if user_signed_in? %>
+   <label for="inputName">ユーザーネーム</label></br>
    <%= f.text_field :username, id:"inputName"%>
   </div>
+  <% elsif guest_user_signed_in? %>
+   <label for="inputName">ユーザーネーム</label></br>
+   ゲストユーザーの場合、ユーザーネームは変更できません。
+  <% end %>
   
   <div class="edit_introduction">
   <label for="inputIntroduction">自己紹介</label></br>

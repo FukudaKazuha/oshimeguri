@@ -5,6 +5,8 @@ class Post < ApplicationRecord
   belongs_to :user
   # postsとのアソシエーション
   has_many :post_comments, dependent: :destroy
+  has_many :favorites
+  has_many :users, through: :favorites 
   
   validates :title, presence: true
   validates :body, presence: true
@@ -33,6 +35,10 @@ class Post < ApplicationRecord
     else
       @post = Post.all
     end
+  end
+  
+  def favorited_by?(user)
+   favorites.exists?(user_id: user.id)
   end
   
 # mapに必要なもの
