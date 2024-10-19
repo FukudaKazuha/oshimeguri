@@ -15,7 +15,7 @@
  
  <div class="profile_link">
  <%= link_to "プロフィール編集", edit_user_path(@user.id) %>
- <%= link_to "いいね一覧", user_favorites_path(@user.id) %>
+ <%= link_to "いいね一覧", user_favorites_path(current_user) %>
  </div>
 
 <!--プロフィール写真-->

@@ -32,9 +32,11 @@ class ApplicationController < ActionController::Base
   private
   
   def require_login
-   if !current_user && !current_admin &&(controller_name != 'sessions' && controller_name != 'registrations' &&  controller_name != 'passwords'&&  controller_name != 'users/sessions')
+    # ログイン、サインアップ以外にもゲストログインもできるようにしたい↓
+  if !current_user && !current_admin &&(controller_name != 'sessions' && controller_name != 'registrations' &&  controller_name != 'concerns/users/sessions')
+    # 非ログイン時、ログインと新規登録ページには遷移
     redirect_to root_path, alert: "ログインが必要です"
-   end
+  end
   end
 
 end

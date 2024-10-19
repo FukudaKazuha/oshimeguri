@@ -4,21 +4,20 @@ class FavoritesController < ApplicationController
   def create
     post = Post.find(params[:post_id])
     favorite = current_user.favorites.new(post_id: post.id)
-    @favorite.save
+    favorite.save
     redirect_to post_path(post)
   end
  
  
-  def index
-   @posts=current_user.favorite_posts
-  # unless @user.id == current_user.id
-  end
+   def index
+    @posts = current_user.favorites
+   end
 
  
   def destroy
     post = Post.find(params[:post_id])
     favorite = current_user.favorites.find_by(post_id: post.id)
-    @favorite.destroy
+    favorite.destroy
     redirect_to post_path(post)
   end
 
@@ -29,7 +28,7 @@ class FavoritesController < ApplicationController
   end
 
   def post_params
-   params.require(:post).permit(:title,:body,:image,:adress)
+   params.require(:post).permit(:title,:body,:image)
   end
 
 

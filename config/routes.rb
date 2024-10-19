@@ -4,6 +4,8 @@ Rails.application.routes.draw do
  devise_for  :admins, path: :admin, skip: [:registrations, :password], controllers: {
   sessions: 'admin/sessions'
  }
+  get '/admins/sign_out' => 'devise/admins/sessions#destroy'
+ 
  
  namespace :admin do
   resources :users, only: [:index,:show,:destroy]
@@ -20,15 +22,16 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show,:edit,:update,:destroy] do
    delete :destroy, on: :member
-   resources :favorites, only: [:index]
+  resources :favorites, only: [:index]
   end
 
   
   get "search" => "searches#search"
   
+  
   resources :posts do
+    resource :favorite, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
-    resource :favorite, only: [:create,:destroy]  
     resource :map, only: [:show]
   end
 end
