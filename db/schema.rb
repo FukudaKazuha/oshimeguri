@@ -98,5 +98,4 @@ ActiveRecord::Schema.define(version: 2024_10_14_080907) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
-
 end
