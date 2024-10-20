@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :destroy]
+  before_action :set_user, only: [:show, :destroy, :favorite]
   before_action :authenticate_user!, only: [:mypage]
   before_action :authenticate_user, {only: [:top]}
   
@@ -62,7 +62,8 @@ class UsersController < ApplicationController
    @post = Post.find(params[:id])
   end
   
-   private
+
+  private
    
   def user_params
     params.require(:user).permit(:profile_image, :username, :introduction)
@@ -71,5 +72,7 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
+  
+  
   
 end

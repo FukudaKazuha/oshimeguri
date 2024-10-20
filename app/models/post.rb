@@ -3,8 +3,9 @@ class Post < ApplicationRecord
   has_one_attached :image
   # userとのアソシエーション
   belongs_to :user
-  # postsとのアソシエーション
+  # post_commentとのアソシエーション
   has_many :post_comments, dependent: :destroy
+
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites 
   
@@ -37,6 +38,7 @@ class Post < ApplicationRecord
     end
   end
   
+
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end

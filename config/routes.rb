@@ -20,9 +20,9 @@ Rails.application.routes.draw do
   root to: "homes#top"
   get 'users/mypage' => 'users#mypage'
   
-  resources :users, only: [:show,:edit,:update,:destroy] do
+  resources :users, only: [:index,:show,:edit,:update,:destroy] do
    delete :destroy, on: :member
-  resources :favorites, only: [:index]
+   resources :favorites, only: [:index]
   end
 
   
@@ -34,4 +34,7 @@ Rails.application.routes.draw do
     resources :post_comments, only: [:create, :destroy]
     resource :map, only: [:show]
   end
+  
+  
+  # resources :likes, only: [:index,:create,:destroy] 
 end
