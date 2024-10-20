@@ -13,9 +13,9 @@
  <!--ログインフラッシュメッセージ-->
  <p><%= flash[:notice] %></p>
  
- <div class="link">
-  <%= link_to "プロフィール編集", edit_user_path(@user.id) %>
-  <%= link_to "いいね一覧",user_likes_path(@user.id) %>
+ <div class="profile_link">
+ <%= link_to "プロフィール編集", edit_user_path(@user.id) %>
+ <%= link_to "いいね一覧", user_favorites_path(current_user) %>
  </div>
  
  <%= link_to "いいね一覧",  favorites_userpath(@user) %>

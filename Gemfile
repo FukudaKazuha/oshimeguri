@@ -68,4 +68,7 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
-
+# mapに必要なgem
+gem 'dotenv-rails'
+# 位置情報を扱うためのGem
+gem 'geocoder'

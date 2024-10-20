@@ -7,25 +7,22 @@ class User < ApplicationRecord
   validates :username, presence: true
   # プロフィール写真を設定しなくても大丈夫に
   after_initialize :set_default_profile_picture
-<<<<<<< HEAD
-  # postとのアソシエーション
+
+  # postsとuserのアソシエーション
   has_many :posts, dependent: :destroy
-  # post_commentとのアソシエーション
+  # userとpost_commentのアソシエーション
   has_many :post_comments, dependent: :destroy
-  # いいねとのアソシエーション
-  has_many :likes, dependent: :destroy
-  has_many :like_posts, through: :likes, source: :post
-=======
- 
-  has_many :posts, dependent: :destroy
-  has_many :post_comments, dependent: :destroy
+  # userとfavoriteのアソシエーション
   has_many :favorites, dependent: :destroy
-  
->>>>>>> origin/feature/favorite
+  has_many :favorite_posts, through: :favorites, source: :post
 
 # ゲストログイン
+
+　GUEST_USER_EMAIL= "guest@example.com"
+
   def self.guest
-    find_or_create_by!(email: 'guest@example.com') do |user|
+    find_or_create_by!(email: GUEST_USER_EMAIL) do |user|
+    # find_or_create_by!(email: 'guest@example.com') do |user|  
       user.username= "ゲスト"
       # バリデーションでusernameとしているからusernameが必要
       user.password = SecureRandom.urlsafe_base64

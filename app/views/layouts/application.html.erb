@@ -17,7 +17,7 @@
     
      <div class="header-bottom">
      <% if user_signed_in? %>
-      <%= link_to "新規投稿", new_post_path %>
+      <%= link_to "新規投稿", new_post_path,class: 'nav-link text-dark', data: {turbolinks: "false"}  %>
       <%= link_to "検索", posts_path %>
       <%= link_to "マイページ", user_path(current_user) %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
@@ -37,7 +37,8 @@
     </header>
     
     <%= yield %>
-    
+    <!--mapに必要なもの-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-jpostal-ja@2.14.45/jquery.jpostal.min.js"></script>
   </body>
   
   <footer>

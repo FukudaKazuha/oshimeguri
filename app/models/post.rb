@@ -5,17 +5,15 @@ class Post < ApplicationRecord
   belongs_to :user
   # post_commentとのアソシエーション
   has_many :post_comments, dependent: :destroy
-<<<<<<< HEAD
-  # いいねとのアソシエーション
-  has_many :likes
-  has_many :users, through: :likes
-=======
+
   has_many :favorites, dependent: :destroy
->>>>>>> origin/feature/favorite
+  has_many :users, through: :favorites 
   
   validates :title, presence: true
   validates :body, presence: true
   validates :image, presence: true
+  # mapに必要なもの
+  validates :address, presence: true
   
    def get_image(width, height)
     unless image.attached?
@@ -40,14 +38,14 @@ class Post < ApplicationRecord
     end
   end
   
-<<<<<<< HEAD
-  def liked_by?(user)
-   likes.where(user_id: user.id).exists?
-=======
+
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
->>>>>>> origin/feature/favorite
   end
+  
+# mapに必要なもの
+  geocoded_by :address
+  after_validation :geocode
   
 end
 

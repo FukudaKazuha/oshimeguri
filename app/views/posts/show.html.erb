@@ -5,6 +5,7 @@
  <div class="post_show">投稿詳細ページ</div>
  <!--投稿成功フラッシュメッセージ-->
  <div class="flash2"><%= flash[:notice] %></div>
+
  
  <!--投稿したユーザーのアイコンとユーザーネーム-->
  <div class="show_profile">
@@ -24,50 +25,43 @@
  <%= @post.created_at.strftime('%Y/%m/%d') %>
 </div>
 
-<<<<<<< HEAD
-<div class="like">
- <% if @post.liked_by?(current_user) %>
-  <p>
-   <%= link_to post_likes_path(@post), method: :delete do %>
-     ♥<%= @post.likes.count %> いいね
-=======
+
 <div class="favorite">
  <% if @post.favorited_by?(current_user) %>
   <p>
-   <%= link_to post_favorite_path(@post), method: :delete do %>
-     ♥<%= @post.favorites.count %> いいね
->>>>>>> origin/feature/favorite
-   <% end %>
+   <%= button_to post_favorite_path(@post.id), method: :delete do %>
+    ♥<%= @post.favorites.count %> いいね
+  <% end %>
   </p>
-   <% else %>
+  <% else %>
   <p>
-<<<<<<< HEAD
-   <%= link_to post_likes_path(@post.id), method: :post do %>
-     ♡<%= @post.likes.count %> いいね
-=======
-   <%= link_to post_favorite_path(@post), method: :post do %>
+    <%= button_to post_favorite_path(@post.id), method: :post do %>
      ♡<%= @post.favorites.count %> いいね
->>>>>>> origin/feature/favorite
    <% end %>
-  </p>
+   </p>
  <% end %>
 </div>
 
+
 <div class="shop_road_name">施設や道の場所名
-<p><%= @post.title %></p>
+ <p><%= @post.title %></p>
 </div>
 
 <div class="post_text">投稿文
 <p><%= @post.body %></p>
 </div>
 
+<div class ="map">
+ <%= link_to "マップを見る",post_map_path(@post.id) %>
+</div>
 
 <% if @post.user == current_user %>
 <div class="post_edit">
  <%= link_to "投稿編集", edit_post_path(@post.id) %>
 </div>
 <div class="post_delete">
- <%= link_to "投稿削除",post_path(@post.id), method: :delete, "data-confirm"=>"本当に削除しますか？" %>
+ <%= link_to "投稿削除", post_path(@post), method: :delete, "data-confirm"=>"本当に消しますか？"  %>
+ <%#= link_to "Destroy",book_path(@book), method: :delete, "data-confirm"=>"本当に消しますか？" %>
 </div>
 <% end %>
 
@@ -83,8 +77,9 @@
     <p><%= post_comment.user.username %></p>
     <%= post_comment.created_at.strftime('%Y/%m/%d') %>
      <% if post_comment.user == current_user %>
-      <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete %>
+      <%= link_to "コメント削除", post_post_comment_path(post_comment.post, post_comment), method: :delete %>
     <% end %>
+    
     <p><%= post_comment.comment %></p>
    
   <% end %>

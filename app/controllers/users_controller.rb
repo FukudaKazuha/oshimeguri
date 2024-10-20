@@ -55,31 +55,15 @@ class UsersController < ApplicationController
     flash[:notice] = 'ユーザーが退会しました'
   end
   
-<<<<<<< HEAD
-  # def liked_posts
-  # @user = User.find_by(id: params[:id])
-  # @liked_posts = @user.like_posts
-  # end
-  
-  
-  def likes
-    @user = User.find(params[:id])
-    likes= Like.where(user_id: @user.id).pluck(:post_id)
-    @like_posts = Post.find(likes)
-    @post = Post.find(params[:id])
-  end
-  
-  
-  
-=======
   def favorites
-    @favorites = Favorites.where(user_id: @user.id).pluck(:post_id)
-    @favorite_posts = Post.find(favorites)
+   @user = User.find(params[:id])
+   favorites= Favorite.where(user_id: @user.id).pluck(:post_id)
+   @favorite_posts = Post.find(favorites)
+   @post = Post.find(params[:id])
   end
   
-  
->>>>>>> origin/feature/favorite
-   private
+
+  private
    
   def user_params
     params.require(:user).permit(:profile_image, :username, :introduction)

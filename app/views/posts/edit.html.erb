@@ -16,8 +16,11 @@
     </div>
      <!--更新投稿フォーム-->
      <%= form_with model: @post do |f| %>
-     
-      <div class="edit_post_image">投稿画像</br>
+     <div class="edit_post_adress">
+     <%= text_field_tag :zipcode, nil, class: "form-control", placeholder: "郵便番号" %>
+   　<%= f.text_field :address, class: "form-control", placeholder: "住所" %>
+     </div>
+     <div class="edit_post_image">投稿画像</br>
   　　<%= f.file_field :image, accept: "image/*" %>
      </div>
      

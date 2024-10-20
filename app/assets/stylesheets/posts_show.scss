@@ -34,15 +34,9 @@
   font-size:15px;
 }
 
-<<<<<<< HEAD
-.like{
-  text-align: center;
-  padding: 20px;
-=======
 .favorite{
   text-align: center;
-  padding: 10px;
->>>>>>> origin/feature/favorite
+  padding: 20px;
 }
 
 .shop_road_name{
@@ -57,6 +51,12 @@
   font-family: Hiragino Sans W6;
   font-size:20px;
   padding: 20px;
+}
+
+.map{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 .post_edit{
