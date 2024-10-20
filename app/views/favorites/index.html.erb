@@ -4,8 +4,9 @@
 
 <div class="favorites"><%= @user.username %>のいいね一覧</div>
 
-<% @posts.each do |post| %>
- <%= link_to post_path([post.id]) do %>
-  <%= image_tag post.image, size: "300x300" %>
+<% @favorites.each do |favo| %>
+ <%= link_to post_path(favo.post.id) do %>
+  <%= favo.post.title %>
+  <%= image_tag favo.post.image, size: "300x300" %>
  <% end %>
 <% end %> 
