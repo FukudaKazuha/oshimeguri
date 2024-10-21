@@ -5,6 +5,4 @@ class Users::SessionsController < Devise::SessionsController
     sign_in user
     redirect_to users_mypage_path
   end
-  
-
 end
