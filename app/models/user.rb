@@ -28,6 +28,7 @@ class User < ApplicationRecord
     end
   end
   
+  
   # プロフィール写真
   def get_profile_image(width, height)
     unless profile_image.attached?

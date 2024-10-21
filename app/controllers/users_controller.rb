@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :destroy, :favorite]
   before_action :authenticate_user!, only: [:mypage]
   before_action :authenticate_user, {only: [:top]}
+
   
   def new
     @user=User.new
@@ -72,12 +73,6 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
-  
-   def ensure_guest_user
-    @user = User.find(params[:id])
-    if @user.email == "guest@example.com"
-     
-   end  
 
-  
+
 end
