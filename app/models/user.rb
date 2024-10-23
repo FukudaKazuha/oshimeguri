@@ -17,11 +17,9 @@ class User < ApplicationRecord
   has_many :favorite_posts, through: :favorites, source: :post
 
 # ゲストログイン
-
-　GUEST_USER_EMAIL= "guest@example.com"
-
+ 
   def self.guest
-    find_or_create_by!(email: GUEST_USER_EMAIL) do |user|
+    find_or_create_by!(email: "guest@example.com") do |user|
     # find_or_create_by!(email: 'guest@example.com') do |user|  
       user.username= "ゲスト"
       # バリデーションでusernameとしているからusernameが必要
@@ -29,6 +27,7 @@ class User < ApplicationRecord
       # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
     end
   end
+  
   
   # プロフィール写真
   def get_profile_image(width, height)
@@ -46,6 +45,7 @@ class User < ApplicationRecord
     self.profile_image ||= 'default.jpg'
   end
   
+
   
   # 検索方法分岐
   def self.looks(search, word)
