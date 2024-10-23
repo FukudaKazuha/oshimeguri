@@ -17,7 +17,7 @@ class User < ApplicationRecord
   has_many :favorite_posts, through: :favorites, source: :post
 
 # ゲストログイン
-
+ 
   def self.guest
     find_or_create_by!(email: "guest@example.com") do |user|
     # find_or_create_by!(email: 'guest@example.com') do |user|  
@@ -45,6 +45,7 @@ class User < ApplicationRecord
     self.profile_image ||= 'default.jpg'
   end
   
+
   
   # 検索方法分岐
   def self.looks(search, word)
