@@ -30,13 +30,13 @@
  <% if @post.favorited_by?(current_user) %>
   <p>
    <%= button_to post_favorite_path(@post.id), method: :delete do %>
-    ♥<%= @post.favorites.count %> いいね
+    ♥<%= @post.favorites.count %> 
   <% end %>
   </p>
   <% else %>
   <p>
     <%= button_to post_favorite_path(@post.id), method: :post do %>
-     ♡<%= @post.favorites.count %> いいね
+     ♡<%= @post.favorites.count %> 
    <% end %>
    </p>
  <% end %>
