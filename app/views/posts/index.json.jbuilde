@@ -3,7 +3,7 @@ json.data do
     json.array!(@posts) do |post|
       json.id post.id
       json.user do
-        json.name post.user.name
+        json.name post.user.username
         json.image url_for(post.user.profile_image)
       end
       json.image url_for(post.image)

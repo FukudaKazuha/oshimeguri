@@ -32,8 +32,8 @@ async function initMap() {
       const longitude = item.longitude;
       const title = item.title;
       // 追記
-      const userImage = item.user.image;
-      const userName = item.user.name;
+      const userImage = item.user.profile_image;
+      const userName = item.user.username;
       const postImage = item.image;
       const address = item.address;
       const caption = item.caption;
