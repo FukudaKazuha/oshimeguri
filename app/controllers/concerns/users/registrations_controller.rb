@@ -1,5 +1,5 @@
-class Users::RegistrationssController < Devise::SessionsController
- efore_action :ensure_guest_user, only: :edit
+class Users::RegistrationsController < Devise::SessionsController
+ before_action :ensure_guest_user, only: :edit
  
  def ensure_guest_user
   if resource.email == "guest@example.com"
