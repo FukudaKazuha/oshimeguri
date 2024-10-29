@@ -20,9 +20,9 @@
  </div>
  
  <!--ゲストユーザーの場合はプロフィール編集画面に遷移できないようにする-->
-<% if @user.email != "guest@example.com" %>
- <%= link_to "プロフィール編集",edit_user_path(@user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{@user.id}" %>
-<% end %>
+<%# if @user.email != "guest@example.com" %>
+ <%#= link_to "プロフィール編集",edit_user_path(@user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{@user.id}" %>
+<% #end %>
  
 <!--プロフィール写真-->
  <%= image_tag @user.get_profile_image(100,100)  %>
