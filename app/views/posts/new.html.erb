@@ -18,7 +18,9 @@
 
  <%= form_with model: @post do |f| %>
   <div class="post_adress">
+   <span class="input-group-text" aria-hidden="true"><i class="fa-solid fa-tenge-sign"></i></span>
    <%= text_field_tag :zipcode, nil, class: "form-control", placeholder: "郵便番号" %>
+   <span class="input-group-text" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
    <%= f.text_field :address, class: "form-control", placeholder: "住所" %>
   </div>
   
@@ -37,6 +39,6 @@
 	<div class="post_button"><%= f.submit '投稿' %></div>
 	
 	
-	<%#= javascript_pack_tag "jpostal",  'data-turbolinks-track': 'reload' %>
+	<%= javascript_pack_tag "jpostal",  'data-turbolinks-track': 'reload' %>
   
  <% end %>

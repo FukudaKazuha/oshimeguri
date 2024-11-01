@@ -42,6 +42,7 @@
  <% end %>
 </div>
 
+<div class="post_adress">住所 : <%= @post.address %></div>
 
 <div class="shop_road_name">施設や道の場所名
  <p><%= @post.title %></p>
@@ -51,8 +52,10 @@
 <p><%= @post.body %></p>
 </div>
 
+
 <div class ="map">
- <%= link_to "マップを見る",post_map_path(@post.id) %>
+ <%= link_to "マップを見る",post_map_path(@post.id), class: 'nav-link text-dark', data: {turbolinks: "false"} %>
+ <%#= link_to '投稿フォーム', new_post_image_path, class: 'nav-link text-dark', data: {turbolinks: "false"}  %>
 </div>
 
 <% if @post.user == current_user %>
@@ -61,7 +64,6 @@
 </div>
 <div class="post_delete">
  <%= link_to "投稿削除", post_path(@post), method: :delete, "data-confirm"=>"本当に消しますか？"  %>
- <%#= link_to "Destroy",book_path(@book), method: :delete, "data-confirm"=>"本当に消しますか？" %>
 </div>
 <% end %>
 
